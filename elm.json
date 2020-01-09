@@ -1,0 +1,16 @@
+{
+    "type": "package",
+    "name": "fission-suite/elm-kit",
+    "summary": "UI Kit for Fission Elm projects ",
+    "license": "Apache-2.0",
+    "version": "0.1.0",
+    "exposed-modules": [
+        "Kit"
+    ],
+    "elm-version": "0.19.0 <= v < 0.20.0",
+    "dependencies": {
+        "elm/core": "1.0.0 <= v < 2.0.0",
+        "mdgriffith/elm-ui": "1.1.5 <= v < 2.0.0"
+    },
+    "test-dependencies": {}
+}
