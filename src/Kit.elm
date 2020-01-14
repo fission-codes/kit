@@ -7,6 +7,36 @@ import Element.Region as Region
 
 
 
+-- 🏔
+
+
+{-| Most frequently used border-rounding.
+-}
+defaultBorderRounding =
+    scales.spacing 1
+
+
+{-| See <https://package.elm-lang.org/packages/mdgriffith/elm-ui/1.1.5/Element#paddingEach>
+
+    Element.paddingEach { edges | top = 1 }
+
+-}
+edges : { top : Int, right : Int, bottom : Int, left : Int }
+edges =
+    { top = 0
+    , right = 0
+    , bottom = 0
+    , left = 0
+    }
+
+
+{-| Alias for `edges`.
+-}
+none =
+    edges
+
+
+
 -- 🎨
 
 
@@ -26,6 +56,14 @@ colors =
     , black = rgb 0 0 0
     , white = rgb 255 255 255
     }
+
+
+primaryColor =
+    colors.purple
+
+
+secondaryColor =
+    colors.pink
 
 
 rgb =
