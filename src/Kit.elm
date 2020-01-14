@@ -1,6 +1,8 @@
 module Kit exposing (..)
 
 import Element exposing (Element)
+import Element.Background as Background
+import Element.Border as Border
 import Element.Extra as Element
 import Element.Font as Font
 import Element.Region as Region
