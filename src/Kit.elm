@@ -170,14 +170,27 @@ codeBlock { body, language } =
 
 heading : { level : Int } -> List (Element msg) -> Element msg
 heading { level } =
-    -- TODO
-    Element.paragraph
-        [ Element.paddingXY 0 (scales.spacing 8)
-        , Element.spacing (scales.spacing 2)
-        , Font.letterSpacing -0.25
-        , Font.size (scales.typography 4)
-        , Region.heading level
-        ]
+    case level of
+        1 ->
+            Element.paragraph
+                [ Element.spacing (scales.spacing 2)
+                , Font.center
+                , Font.family fonts.display
+                , Font.letterSpacing -0.625
+                , Font.semiBold
+                , Font.size (scales.typography 7)
+                , Region.heading level
+                ]
+
+        _ ->
+            -- TODO
+            Element.paragraph
+                [ Element.paddingXY 0 (scales.spacing 8)
+                , Element.spacing (scales.spacing 2)
+                , Font.letterSpacing -0.25
+                , Font.size (scales.typography 4)
+                , Region.heading level
+                ]
 
 
 inlineCode : String -> Element msg
