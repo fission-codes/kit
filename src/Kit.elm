@@ -1,16 +1,9 @@
 module Kit exposing (..)
 
 import Element exposing (Element)
+import Element.Extra as Element
 import Element.Font as Font
 import Element.Region as Region
-
-
-
--- 🛠
-
-
-rgb =
-    Element.rgb255
 
 
 
@@ -35,8 +28,12 @@ colors =
     }
 
 
+rgb =
+    Element.rgb255
 
--- Fonts
+
+
+-- FONTS
 
 
 fonts =
@@ -60,7 +57,7 @@ fonts =
 
 
 
--- Scaling
+-- SCALING
 
 
 base =
@@ -74,7 +71,55 @@ scales =
 
 
 
+-- 🧱  ░░  BUTTONS
+
+
+button : String -> Element msg
+button =
+    Element.text >> Element.el buttonAttributes
+
+
+buttonAlt : String -> Element msg
+buttonAlt =
+    Element.text >> Element.el buttonAltAttributes
+
+
+buttonAttributes : List (Element.Attribute msg)
+buttonAttributes =
+    buttonAttributesWithColor primaryColor
+
+
+buttonAltAttributes : List (Element.Attribute msg)
+buttonAltAttributes =
+    buttonAttributesWithColor secondaryColor
+
+
+buttonAttributesWithColor : Element.Color -> List (Element.Attribute msg)
+buttonAttributesWithColor color =
+    [ Element.paddingXY (scales.spacing 3) (scales.spacing 3)
+    , Background.color color
+    , Border.rounded defaultBorderRounding
+    , Font.color colors.white
+    , Font.size (scales.typography 1)
+    ]
+
+
+
 -- 🧱
+
+
+caption : String -> Element msg
+caption text =
+    Element.paragraph
+        [ Element.centerX
+        , Element.paddingEach { edges | top = scales.spacing 4 }
+        , Element.spacing (scales.spacing 1.5)
+        , Element.width (Element.maximum 638 Element.fill)
+        , Font.color colors.gray_300
+        , Font.size (scales.typography -1)
+        ]
+        [ Element.textWithLineBreaks text
+        ]
 
 
 codeBlock : { body : String, language : Maybe String } -> Element msg
@@ -85,6 +130,7 @@ codeBlock { body, language } =
 
 heading : { level : Int } -> List (Element msg) -> Element msg
 heading { level } =
+    -- TODO
     Element.paragraph
         [ Element.paddingXY 0 (scales.spacing 8)
         , Element.spacing (scales.spacing 2)
@@ -121,3 +167,12 @@ paragraph : List (Element msg) -> Element msg
 paragraph =
     Element.paragraph
         [ Element.spacing (scales.spacing 2) ]
+
+
+subtleParagraph : List (Element msg) -> Element msg
+subtleParagraph =
+    Element.paragraph
+        [ Element.spacing (scales.spacing 2)
+        , Font.color colors.gray_300
+        , Font.size (scales.typography 2)
+        ]
