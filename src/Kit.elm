@@ -151,8 +151,7 @@ buttonAttributesWithColor color =
 caption : String -> Element msg
 caption text =
     Element.paragraph
-        [ Element.centerX
-        , Element.paddingEach { edges | top = scales.spacing 4 }
+        [ Element.paddingEach { edges | top = scales.spacing 4 }
         , Element.spacing (scales.spacing 1.5)
         , Element.width (Element.maximum 638 Element.fill)
         , Font.color colors.gray_300
@@ -174,7 +173,6 @@ heading { level } =
         1 ->
             Element.paragraph
                 [ Element.spacing (scales.spacing 2)
-                , Font.center
                 , Font.family fonts.display
                 , Font.letterSpacing -0.625
                 , Font.semiBold
