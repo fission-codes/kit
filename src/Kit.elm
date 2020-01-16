@@ -230,10 +230,7 @@ subtleParagraph =
 
 
 subtleText : String -> Element msg
-subtleText str=
-    Element.text str
-    |> Element.el
-        [ Font.color colors.gray_300
-        , Font.size (scales.typography 1)
-        , Element.spacing (scales.spacing 2)
-        ]
+subtleText str =
+    str
+        |> Element.text
+        |> Element.el [ Font.color colors.gray_300 ]
