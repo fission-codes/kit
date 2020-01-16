@@ -54,7 +54,13 @@ colors =
     , gray_500 = rgb 206 208 224
     , gray_600 = rgb 235 236 245
 
-    --
+    -- Generated
+    ------------
+    , darkPink = rgb 191 61 87
+    , green = rgb 61 191 83
+
+    -- Basic
+    --------
     , black = rgb 0 0 0
     , white = rgb 255 255 255
     }
