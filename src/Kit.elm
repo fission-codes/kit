@@ -114,16 +114,6 @@ scales =
 -- 🧱  ░░  BUTTONS
 
 
-button : String -> Element msg
-button =
-    Element.text >> Element.el buttonAttributes
-
-
-buttonAlt : String -> Element msg
-buttonAlt =
-    Element.text >> Element.el buttonAltAttributes
-
-
 buttonAttributes : List (Element.Attribute msg)
 buttonAttributes =
     buttonAttributesWithColor primaryColor
