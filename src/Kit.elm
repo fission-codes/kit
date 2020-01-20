@@ -144,17 +144,19 @@ buttonAttributesWithColor color =
 -- 🧱
 
 
-caption : String -> Element msg
-caption text =
+caption : List (Element msg) -> Element msg
+caption =
     Element.paragraph
         [ Element.paddingEach { edges | top = scales.spacing 4 }
         , Element.spacing (scales.spacing 1.5)
-        , Element.width (Element.maximum 638 Element.fill)
         , Font.color colors.gray_300
         , Font.size (scales.typography -1)
         ]
-        [ Element.textWithLineBreaks text
-        ]
+
+
+captionWithText : String -> Element msg
+captionWithText text =
+    caption [ Element.textWithLineBreaks text ]
 
 
 codeBlock : { body : String, language : Maybe String } -> Element msg
@@ -204,10 +206,17 @@ link attributes =
         }
 
 
-list : List (Element msg) -> Element msg
-list _ =
+orderedList : Int -> List (List (Element msg)) -> Element msg
+orderedList startIndex items =
     -- TODO
-    Element.none
+    items
+        |> List.indexedMap
+            (\idx ->
+                Element.column
+                    []
+            )
+        |> Element.column
+            []
 
 
 paragraph : List (Element msg) -> Element msg
@@ -230,3 +239,15 @@ subtleText str =
     str
         |> Element.text
         |> Element.el [ Font.color colors.gray_300 ]
+
+
+unorderedList : List (List (Element msg)) -> Element msg
+unorderedList items =
+    -- TODO
+    items
+        |> List.map
+            (Element.column
+                []
+            )
+        |> Element.column
+            []
