@@ -147,7 +147,7 @@ buttonAttributesWithColor color =
 blockquote : List (Element msg) -> Element msg
 blockquote =
     -- TODO
-    Kit.paragraph
+    paragraph
 
 
 caption : List (Element msg) -> Element msg
