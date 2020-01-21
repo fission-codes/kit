@@ -144,6 +144,12 @@ buttonAttributesWithColor color =
 -- 🧱
 
 
+blockquote : List (Element msg) -> Element msg
+blockquote =
+    -- TODO
+    Kit.paragraph
+
+
 caption : List (Element msg) -> Element msg
 caption =
     Element.paragraph
@@ -187,6 +193,12 @@ heading { level } =
                 , Font.size (scales.typography 4)
                 , Region.heading level
                 ]
+
+
+horizontalRule : Element msg
+horizontalRule =
+    -- TODO
+    Element.none
 
 
 inlineCode : String -> Element msg
