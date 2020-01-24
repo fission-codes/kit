@@ -1,0 +1,27 @@
+{
+  "name": "fission-kit",
+  "version": "0.2.0",
+  "description": "A UI Kit for Fission Projects",
+  "main": "src/Kit.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fission-suite/kit.git"
+  },
+  "keywords": [
+    "fission",
+    "kit",
+    "ui",
+    "ui-kit",
+    "styles"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/fission-suite/kit/issues"
+  },
+  "homepage": "https://github.com/fission-suite/kit#readme"
+}
