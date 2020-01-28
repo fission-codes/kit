@@ -18,6 +18,9 @@ colors =
     , gray_400 = rgb 165 167 184
     , gray_500 = rgb 206 208 224
     , gray_600 = rgb 235 236 245
+    , gray_700 = rgb 242 242 249
+    , gray_800 = rgb 245 245 251
+    , gray_900 = rgb 246 247 252
 
     -- Generated
     ------------
