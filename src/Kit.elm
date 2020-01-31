@@ -22,9 +22,14 @@ colors =
     , gray_800 = rgb 245 245 251
     , gray_900 = rgb 246 247 252
 
+    -- Lighter
+    ----------
+    , pink_tint = rgb 244 220 225
+    , purple_tint = rgb 218 210 254
+
     -- Generated
     ------------
-    , darkPink = rgb 191 61 87
+    , dark_pink = rgb 191 61 87
     , green = rgb 61 191 83
 
     -- Basic
