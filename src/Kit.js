@@ -21,14 +21,19 @@ export const colors =
   , pink_tint: rgb(244, 220, 225)
   , purple_tint: rgb(218, 210, 254)
 
-  // Generated
-  // ---------
+  // Darker
+  // ------
   , dark_pink: rgb(191, 61, 87)
-  , green: rgb(61, 191, 83)
+
+  //
+  , darkness_below: hsl(232.7, 20.3, 11)
+  , darkness: hsl(232.7, 20.3, 12)
+  , darkness_above: hsl(232.7, 20.3, 18)
 
   // Basic
   // -----
   , black: rgb(0, 0, 0)
+  , green: rgb(61, 191, 83)
   , white: rgb(255, 255, 255)
   }
 
@@ -39,6 +44,11 @@ export const primaryColor =
 
 export const secondaryColor =
     colors.pink
+
+
+export function hsl(h, s, l) {
+  return `hsl(${h}, ${s}%, ${l}%)`
+}
 
 
 export function rgb(r, g, b) {

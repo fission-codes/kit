@@ -1,6 +1,6 @@
 module Kit exposing (..)
 
-import Color
+import Color exposing (Color, hsl)
 
 
 
@@ -27,14 +27,19 @@ colors =
     , pink_tint = rgb 244 220 225
     , purple_tint = rgb 218 210 254
 
-    -- Generated
-    ------------
+    -- Darker
+    ---------
     , dark_pink = rgb 191 61 87
-    , green = rgb 61 191 83
+
+    --
+    , darkness_below = hsl 232.7 20.3 11
+    , darkness = hsl 232.7 20.3 12
+    , darkness_above = hsl 232.7 20.3 18
 
     -- Basic
     --------
     , black = rgb 0 0 0
+    , green = rgb 61 191 83
     , white = rgb 255 255 255
     }
 
@@ -47,6 +52,29 @@ secondaryColor =
     colors.pink
 
 
+{-| HSL color function.
+
+Which takes the parameters `h`, `s` and `l`.
+Where `h` is max 360 (degrees), `s` max 100 (pct) and `l` max 100 (pct) as well.
+So given the CSS statement `hsl(232.7, 20.3%, 12%)`, you'd say:
+
+    hsl 232.7 20.3 12
+
+-}
+hsl : Float -> Float -> Float -> Color
+hsl h s l =
+    Color.hsl (h / 360) (s / 100) (l / 100)
+
+
+{-| RGB color function.
+
+Which takes the parameters `r`, `g` and `b`.
+Each of which have a maximum value of 255.
+Equivalent to the standard CSS rgb usage.
+
+    rgb 255 255 255
+
+-}
 rgb =
     Color.rgb255
 
