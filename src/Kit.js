@@ -65,3 +65,22 @@ export const fonts =
     , display: "Work Sans"
     , mono: "Space Mono"
     }
+
+
+
+// MISC
+
+
+/**
+ * Replaces all underscores with a dash in the keys of an object.
+ * @param {Object.<string, *>}
+ * @returns {Object.<string, *>}
+ */
+export function dasherizeObjectKeys(object) {
+  const entries = Object.entries(object)
+  const transformedEntries = entries.map(
+    ([k, v]) => [ k.replace(/_/g, "-"), v ]
+  )
+
+  return Object.fromEntries(transformedEntries)
+}
