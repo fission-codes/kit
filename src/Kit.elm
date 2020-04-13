@@ -29,7 +29,8 @@ colors =
 
     -- Darker
     ---------
-    , dark_pink = rgb 191 61 87
+    , pink_shade = rgb 145 81 94
+    , purple_shade = rgb 84 73 140
 
     --
     , darkness_below = hsl 232.7 20.3 11
@@ -40,6 +41,7 @@ colors =
     --------
     , black = rgb 0 0 0
     , green = rgb 61 191 83
+    , red = rgb 191 61 87
     , white = rgb 255 255 255
     }
 
