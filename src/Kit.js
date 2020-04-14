@@ -23,8 +23,8 @@ export const colors =
 
   // Darker
   // ------
-  , pink_shade: rgb(145, 81, 94),
-  , purple_shade: rgb(84, 73, 140),
+  , pink_shade: rgb(145, 81, 94)
+  , purple_shade: rgb(84, 73, 140)
 
   //
   , darkness_below: hsl(232.7, 20.3, 11)
