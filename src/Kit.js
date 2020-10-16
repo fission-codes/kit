@@ -65,7 +65,7 @@ export function rgb(r, g, b) {
 export const fonts =
     { body: "Karla"
     , display: "Work Sans"
-    , mono: "Space Mono"
+    , mono: "Space Grotesk"
     }
 
 

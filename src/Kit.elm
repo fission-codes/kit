@@ -88,5 +88,5 @@ rgb =
 fonts =
     { body = "Karla"
     , display = "Work Sans"
-    , mono = "Space Mono"
+    , mono = "Space Grotesk"
     }

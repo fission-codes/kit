@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Karla";
+  src: url("fonts/karla-roman-vf.woff2") format("woff2-variations");
+  font-weight: 1 999;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("fonts/karla-italic-vf.woff2") format("woff2-variations");
+  font-weight: 1 999;
+  font-style: italic;
+}
