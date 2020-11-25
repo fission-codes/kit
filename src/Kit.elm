@@ -26,11 +26,13 @@ colors =
     ----------
     , pink_tint = rgb 244 220 225
     , purple_tint = rgb 218 210 254
+    , yellow_tint = rgb 255 248 206
 
     -- Darker
     ---------
     , pink_shade = rgb 145 81 94
     , purple_shade = rgb 84 73 140
+    , yellow_shade = rgb 79 74 44
 
     --
     , darkness_below = hsl 232.7 20.3 11
@@ -43,6 +45,7 @@ colors =
     , green = rgb 61 191 83
     , red = rgb 191 61 87
     , white = rgb 255 255 255
+    , yellow = rgb 255 239 143
     }
 
 
