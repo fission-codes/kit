@@ -8,6 +8,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c",
+    "prepack": "npm run build",
     "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
