@@ -9,9 +9,27 @@ import Color exposing (Color, hsl)
 
 colors =
     { pink = rgb 255 82 116
-    , purple = rgb 100 70 250
+    , pink_tint = rgb 244 220 225
+    , pink_shade = rgb 145 81 94
 
     --
+    , purple = rgb 100 70 250
+    , purple_tint = rgb 218 210 254
+    , purple_shade = rgb 84 73 140
+
+    --
+    , yellow = rgb 255 179 57
+
+    --
+    , neutral_1 = rgb 30 35 71
+    , neutral_2 = rgb 62 65 92
+    , neutral_3 = rgb 120 122 143
+    , neutral_4 = rgb 165 167 184
+    , neutral_5 = rgb 206 208 224
+    , neutral_6 = rgb 235 236 245
+
+    -- Older gray tints.
+    -- NOTE: Might be removed sometime in the future
     , gray_100 = rgb 30 35 71
     , gray_200 = rgb 62 65 92
     , gray_300 = rgb 120 122 143
@@ -22,22 +40,17 @@ colors =
     , gray_800 = rgb 245 245 251
     , gray_900 = rgb 246 247 252
 
-    -- Lighter
-    ----------
-    , pink_tint = rgb 244 220 225
-    , purple_tint = rgb 218 210 254
-    , yellow_tint = rgb 255 248 206
-
-    -- Darker
-    ---------
-    , pink_shade = rgb 145 81 94
-    , purple_shade = rgb 84 73 140
-    , yellow_shade = rgb 79 74 44
-
-    --
+    -- Darkness
+    -----------
     , darkness_below = hsl 232.7 20.3 11
     , darkness = hsl 232.7 20.3 12
     , darkness_above = hsl 232.7 20.3 18
+
+    -- Marker
+    ---------
+    , marker_yellow = rgb 255 239 143
+    , marker_yellow_tint = rgb 255 248 206
+    , marker_yellow_shade = rgb 79 74 44
 
     -- Basic
     --------
@@ -45,7 +58,6 @@ colors =
     , green = rgb 61 191 83
     , red = rgb 191 61 87
     , white = rgb 255 255 255
-    , yellow = rgb 255 239 143
     }
 
 
@@ -90,6 +102,6 @@ rgb =
 
 fonts =
     { body = "Karla"
-    , display = "Work Sans"
-    , mono = "Space Grotesk"
+    , display = "Karrik"
+    , mono = "Fira Code"
     }
