@@ -84,6 +84,64 @@ export const fonts =
     }
 
 
+/**
+ * @font-face rules as objects so you can use them in,
+ * for example, your Tailwind configuration.
+ *
+ *     plugin(function({ addBase }) {
+ *        kit.fontFaces({ fontsPath: "fonts/" }).forEach(fontFace => {
+ *          addBase({ "@font-face": fontFace })
+ *        })
+ *     })
+ */
+export function fontFaces(fontsPath) {
+  const base = fontsPath.replace(/\/+$/, "")
+
+  return [
+
+    // Body
+
+    {
+      fontFamily: "Karla",
+      fontStyle: "normal",
+      fontWeight: "1 999",
+      src: `url("${fontsPath}/karla-roman-vf.woff2") format("woff2-variations")`
+    },
+    {
+      fontFamily: "Karla",
+      fontStyle: "italic",
+      fontWeight: "1 999",
+      src: `url("${fontsPath}/karla-italic-vf.woff2") format("woff2-variations")`
+    },
+
+    // Display
+
+    {
+      fontFamily: "Karrik",
+      fontStyle: "normal",
+      fontWeight: "400",
+      src: `url("${fontsPath}/karrik-regular.woff2") format("woff2")`
+    },
+    {
+      fontFamily: "Karrik",
+      fontStyle: "italic",
+      fontWeight: "400",
+      src: `url("${fontsPath}/karrik-italic.woff2") format("woff2")`
+    },
+
+    // Mono
+
+    {
+      fontFamily: "Fira Code",
+      fontStyle: "normal",
+      fontWeight: "1 999",
+      src: `url("${fontsPath}/firacode-roman-vf.woff2") format("woff2-variations")`
+    }
+
+  ]
+}
+
+
 
 // MISC
 
