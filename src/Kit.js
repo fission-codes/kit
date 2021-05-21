@@ -93,8 +93,18 @@ export const fonts =
  *          addBase({ "@font-face": fontFace })
  *        })
  *     })
+ *
+ * NOTE: The `fontsPath` is the path to your fonts **relative from the stylesheet**
+ * you loaded in.
+ *
+ * For example, say your URL for your index.html file is `domain.io/about/`,
+ * your stylesheet lives on the root and the fonts live at `domain.io/fonts/`.
+ * That means the HTML will refer to the stylesheet using `../stylesheet.css`
+ * and the `fontsPath` will be `fonts/`.
+ *
+ * That said, you can always use an absolute URL if you're unsure.
  */
-export function fontFaces(fontsPath) {
+export function fontFaces({ fontsPath }) {
   const base = fontsPath.replace(/\/+$/, "")
 
   return [
