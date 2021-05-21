@@ -79,7 +79,7 @@ export function rgb(r, g, b) {
 
 export const fonts =
     { body: "Karla"
-    , display: "Karrik"
+    , display: "JetBrains Mono"
     , mono: "Fira Code"
     }
 
@@ -112,12 +112,14 @@ export function fontFaces({ fontsPath }) {
     // Body
 
     {
+      fontDisplay: "swap",
       fontFamily: "Karla",
       fontStyle: "normal",
       fontWeight: "1 999",
       src: `url("${base}/karla-roman-vf.woff2") format("woff2-variations")`
     },
     {
+      fontDisplay: "swap",
       fontFamily: "Karla",
       fontStyle: "italic",
       fontWeight: "1 999",
@@ -127,21 +129,24 @@ export function fontFaces({ fontsPath }) {
     // Display
 
     {
-      fontFamily: "Karrik",
+      fontDisplay: "swap",
+      fontFamily: "JetBrains Mono",
       fontStyle: "normal",
-      fontWeight: "400",
-      src: `url("${base}/karrik-regular.woff2") format("woff2")`
+      fontWeight: "1 999",
+      src: `url("${base}/jetbrainsmono-roman-vf.woff2") format("woff2-variations")`
     },
     {
-      fontFamily: "Karrik",
+      fontDisplay: "swap",
+      fontFamily: "JetBrains Mono",
       fontStyle: "italic",
-      fontWeight: "400",
-      src: `url("${base}/karrik-italic.woff2") format("woff2")`
+      fontWeight: "1 999",
+      src: `url("${base}/jetbrainsmono-italic-vf.woff2") format("woff2-variations")`
     },
 
     // Mono
 
     {
+      fontDisplay: "swap",
       fontFamily: "Fira Code",
       fontStyle: "normal",
       fontWeight: "1 999",

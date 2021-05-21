@@ -102,6 +102,6 @@ rgb =
 
 fonts =
     { body = "Karla"
-    , display = "Karrik"
+    , display = "JetBrains Mono"
     , mono = "Fira Code"
     }

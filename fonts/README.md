@@ -2,6 +2,8 @@
 
 Add the `*.woff2` files to the rest of your files under the `fonts` directory. This directory needs to be relative to your generated css file. Import the provided font css files into your main css file.
 
+Alternatively, use the `fontFaces` function from `Kit.js` to generate font-face rules for usage in Tailwind. See the function docs for more info.
+
 
 
 ```shell
