@@ -105,13 +105,13 @@ export function fontFaces(fontsPath) {
       fontFamily: "Karla",
       fontStyle: "normal",
       fontWeight: "1 999",
-      src: `url("${fontsPath}/karla-roman-vf.woff2") format("woff2-variations")`
+      src: `url("${base}/karla-roman-vf.woff2") format("woff2-variations")`
     },
     {
       fontFamily: "Karla",
       fontStyle: "italic",
       fontWeight: "1 999",
-      src: `url("${fontsPath}/karla-italic-vf.woff2") format("woff2-variations")`
+      src: `url("${base}/karla-italic-vf.woff2") format("woff2-variations")`
     },
 
     // Display
@@ -120,13 +120,13 @@ export function fontFaces(fontsPath) {
       fontFamily: "Karrik",
       fontStyle: "normal",
       fontWeight: "400",
-      src: `url("${fontsPath}/karrik-regular.woff2") format("woff2")`
+      src: `url("${base}/karrik-regular.woff2") format("woff2")`
     },
     {
       fontFamily: "Karrik",
       fontStyle: "italic",
       fontWeight: "400",
-      src: `url("${fontsPath}/karrik-italic.woff2") format("woff2")`
+      src: `url("${base}/karrik-italic.woff2") format("woff2")`
     },
 
     // Mono
@@ -135,7 +135,7 @@ export function fontFaces(fontsPath) {
       fontFamily: "Fira Code",
       fontStyle: "normal",
       fontWeight: "1 999",
-      src: `url("${fontsPath}/firacode-roman-vf.woff2") format("woff2-variations")`
+      src: `url("${base}/firacode-roman-vf.woff2") format("woff2-variations")`
     }
 
   ]
