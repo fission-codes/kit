@@ -14,31 +14,20 @@ export const colors =
   //
   , yellow: rgb(255, 179, 57)
 
-  //
-  , neutral_1: rgb(30, 35, 71)
-  , neutral_2: rgb(62, 65, 92)
-  , neutral_3: rgb(120, 122, 143)
-  , neutral_4: rgb(165, 167, 184)
-  , neutral_5: rgb(206, 208, 224)
-  , neutral_6: rgb(235, 236, 245)
-
-  // Older gray tints.
-  // NOTE: Might be removed sometime in the future
-  , gray_100: rgb(30, 35, 71)
-  , gray_200: rgb(62, 65, 92)
-  , gray_300: rgb(120, 122, 143)
-  , gray_400: rgb(165, 167, 184)
-  , gray_500: rgb(206, 208, 224)
-  , gray_600: rgb(235, 236, 245)
-  , gray_700: rgb(242, 242, 249)
-  , gray_800: rgb(245, 245, 251)
-  , gray_900: rgb(246, 247, 252)
-
-  // Darkness
-  ///////////
-  , darkness_below: hsl(232.7, 20.3, 11)
-  , darkness: hsl(232.7, 20.3, 12)
-  , darkness_above: hsl(232.7, 20.3, 18)
+  // Base
+  ///////
+  , base_25: rgb(246, 247, 252)
+  , base_50: rgb(245, 245, 251)
+  , base_100: rgb(242, 242, 249)
+  , base_200: rgb(235, 236, 245)
+  , base_300: rgb(206, 208, 224)
+  , base_400: rgb(165, 167, 184)
+  , base_500: rgb(120, 122, 143)
+  , base_600: rgb(62, 65, 92)
+  , base_700: rgb(30, 35, 71)
+  , base_800: rgb(37, 39, 55)
+  , base_900: rgb(24, 26, 37)
+  , base_950: rgb(22, 24, 34)
 
   // Marker
   /////////

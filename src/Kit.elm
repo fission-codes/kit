@@ -1,12 +1,25 @@
-module Kit exposing (..)
+module Kit exposing
+    ( colors, primaryColor, secondaryColor, hsl, rgb
+    , fonts
+    )
 
-import Color exposing (Color, hsl)
+{-| Fission Kit.
+
+
+# 🎨
+
+@docs colors, primaryColor, secondaryColor, hsl, rgb
+
+-}
+
+import Color exposing (Color)
 
 
 
 -- 🎨
 
 
+colors : { pink : Color, pink_tint : Color, pink_shade : Color, purple : Color, purple_tint : Color, purple_shade : Color, yellow : Color, base_25 : Color, base_50 : Color, base_100 : Color, base_200 : Color, base_300 : Color, base_400 : Color, base_500 : Color, base_600 : Color, base_700 : Color, base_800 : Color, base_900 : Color, base_950 : Color, marker_yellow : Color, marker_yellow_tint : Color, marker_yellow_shade : Color, black : Color, green : Color, red : Color, white : Color }
 colors =
     { pink = rgb 255 82 116
     , pink_tint = rgb 244 220 225
@@ -20,31 +33,20 @@ colors =
     --
     , yellow = rgb 255 179 57
 
-    --
-    , neutral_1 = rgb 30 35 71
-    , neutral_2 = rgb 62 65 92
-    , neutral_3 = rgb 120 122 143
-    , neutral_4 = rgb 165 167 184
-    , neutral_5 = rgb 206 208 224
-    , neutral_6 = rgb 235 236 245
-
-    -- Older gray tints.
-    -- NOTE: Might be removed sometime in the future
-    , gray_100 = rgb 30 35 71
-    , gray_200 = rgb 62 65 92
-    , gray_300 = rgb 120 122 143
-    , gray_400 = rgb 165 167 184
-    , gray_500 = rgb 206 208 224
-    , gray_600 = rgb 235 236 245
-    , gray_700 = rgb 242 242 249
-    , gray_800 = rgb 245 245 251
-    , gray_900 = rgb 246 247 252
-
-    -- Darkness
-    -----------
-    , darkness_below = hsl 232.7 20.3 11
-    , darkness = hsl 232.7 20.3 12
-    , darkness_above = hsl 232.7 20.3 18
+    -- Base
+    -------
+    , base_25 = rgb 246 247 252
+    , base_50 = rgb 245 245 251
+    , base_100 = rgb 242 242 249
+    , base_200 = rgb 235 236 245
+    , base_300 = rgb 206 208 224
+    , base_400 = rgb 165 167 184
+    , base_500 = rgb 120 122 143
+    , base_600 = rgb 62 65 92
+    , base_700 = rgb 30 35 71
+    , base_800 = rgb 37 39 55
+    , base_900 = rgb 24 26 37
+    , base_950 = rgb 22 24 34
 
     -- Marker
     ---------
@@ -61,10 +63,12 @@ colors =
     }
 
 
+primaryColor : Color
 primaryColor =
     colors.purple
 
 
+secondaryColor : Color
 secondaryColor =
     colors.pink
 
@@ -92,6 +96,7 @@ Equivalent to the standard CSS rgb usage.
     rgb 255 255 255
 
 -}
+rgb : Int -> Int -> Int -> Color
 rgb =
     Color.rgb255
 
@@ -100,6 +105,7 @@ rgb =
 -- FONTS
 
 
+fonts : { body : String, display : String, mono : String }
 fonts =
     { body = "Karla"
     , display = "JetBrains Mono"
