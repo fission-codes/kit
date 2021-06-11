@@ -10,6 +10,11 @@ module Kit exposing
 
 @docs colors, primaryColor, secondaryColor, hsl, rgb
 
+
+# Fonts
+
+@docs fonts
+
 -}
 
 import Color exposing (Color)
