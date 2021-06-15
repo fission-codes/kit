@@ -26,6 +26,6 @@ main =
 
 view : Model -> Browser.Document Msg
 view model =
-    { title = "Contacts"
+    { title = "Styleguide"
     , body = View.view model
     }
