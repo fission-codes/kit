@@ -1,0 +1,5 @@
+{
+  "source": "src/Components/",
+  "dest": "src/",
+  "namespace": "Kit.Internal.Components"
+}

@@ -1,0 +1,24 @@
+{
+    "private": true,
+    "devDependencies": {
+        "autoprefixer": "^10.2.6",
+        "copyfiles": "^2.4.1",
+        "elm": "^0.19.1-5",
+        "fission-kit": "file:../",
+        "postcss": "^8.3.4",
+        "tailwindcss": "^2.1.4"
+    },
+    "scripts": {
+        "build": "pnpm run fonts; pnpm run html; pnpm run elm-prod; pnpm run css-prod",
+        "fonts": "copyfiles --flat ../fonts/**/*.woff2 dist/fonts/",
+        "html": "copyfiles --flat src/**/*.html dist/",
+        "elm-dev": "elm make src/Main.elm --output=dist/application.js --debug",
+        "elm-prod": "elm make src/Main.elm --output=dist/application.js --optimize",
+        "css-dev": "tailwind build -o dist/stylesheet.css",
+        "css-prod": "NODE_ENV=production tailwind build -o dist/stylesheet.css",
+        "ec-dev": "pnpm run elm-dev && pnpm run css-dev",
+        "dev": "pnpm run fonts; pnpm run html; pnpm run elm-dev; pnpm run css-dev",
+        "server": "devd dist --port 8007 --livewatch",
+        "watch": "pnpm run dev && watchexec -p -w src -e elm -- pnpm run ec-dev & watchexec -p -w src -e html -- pnpm run html & watchexec -p -w ../src -i Internal/**/* -- '(cd ../; pnpx i18n-json-to-elm) && pnpm run ec-dev' & wait"
+    }
+}

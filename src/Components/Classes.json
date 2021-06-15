@@ -1,0 +1,9 @@
+{
+	"buttons": {
+		"base": "font-medium inline-flex items-center truncate",
+		"generic": "leading-relaxed px-3 py-1 rounded",
+		"genericSmall": "px-2 py-1 rounded",
+		"genericExtraSmall": "leading-none px-1 py-1 rounded",
+		"signIn": "leading-relaxed px-5 py-2 rounded-full text-[15px] tracking-tight"
+	}
+}

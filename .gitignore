@@ -1,3 +1,7 @@
 /dist
 /elm-stuff
 /node_modules
+
+/guide/dist
+/guide/elm-stuff
+/guide/node_modules

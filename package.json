@@ -20,9 +20,10 @@
     "kit",
     "ui",
     "ui-kit",
-    "styles"
+    "styles",
+    "components"
   ],
-  "author": "",
+  "author": "Steven Vandevelde <icid.asset@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/fission-suite/kit/issues"
@@ -30,6 +31,7 @@
   "homepage": "https://github.com/fission-suite/kit#readme",
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
+    "i18n-json-to-elm": "^1.2.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.35.1"
   }
