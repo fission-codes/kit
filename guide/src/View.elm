@@ -60,9 +60,13 @@ view _ =
         colorBlock color colorName widthClass =
             chunk
                 Html.div
-                [ "h-14"
+                [ "h-9"
+                , "overflow-hidden"
                 , "relative"
                 , widthClass
+
+                --
+                , "md:h-14"
                 ]
                 [ A.style "background-color" (Color.toCssString color) ]
                 [ chunk
@@ -76,8 +80,11 @@ view _ =
                     , "mr-2"
                     , "right-0"
                     , "rounded-sm"
-                    , "text-[10px]"
+                    , "text-[9px]"
                     , "uppercase"
+
+                    --
+                    , "md:text-[10px]"
 
                     -- Dark mode
                     ------------
