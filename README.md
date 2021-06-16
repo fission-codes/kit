@@ -5,45 +5,68 @@
 [![Discord](https://img.shields.io/discord/478735028319158273.svg)](https://discord.gg/zAQBDEq)
 [![Discourse](https://img.shields.io/discourse/https/talk.fission.codes/topics)](https://talk.fission.codes)
 
-A UI Kit for Fission projects.
+__The Fission UI Kit__,  
+_designed to be used with [Tailwind CSS](https://tailwindcss.com)._
 
 
-## Tailwind CSS
+## Getting Started
 
-[Website](https://tailwindcss.com)
+### Step one, install dependencies.
 
-_package.json_
+* `npm install fission-kit`  
+  _TODO: publish on NPM._  
+  _Use library as a Github dependency for now (ie. `fission-suite/kit`)._
+* `npm install tailwindcss`
+* Copy the font files.  
+  `cp -R node_modules/fission-kit/fonts/ ./vendor/fonts/`  
+  _TODO: Make a copy-fonts command._
 
-```json
-{
-  "devDependencies": {
-    "fission-kit": "fission-suite/kit"
-  }
-}
-```
 
-_tailwind.config.js_
+### Step two, configure Tailwind CSS.
+
+We need to configure Tailwind CSS to use the Fission colors and fonts.  
 
 ```js
+import plugin from "tailwindcss/plugin"
 import * as kit from "fission-kit"
+// or kit = require("fission-kit")
 
 export default {
   theme: {
-    // Use Fission color palette instead of Tailwind's
-    colors: kit.colors
-  }
+    colors: kit.dasherizeObjectKeys(kit.colors),
+    fontFamily: kit.fonts
+  },
+  plugins: [
+    plugin(function({ addBase }) {
+      kit.fontFaces({ fontsPath: "/fonts/" }).forEach(fontFace => {
+        addBase({ "@font-face": fontFace })
+      })
+    })
+  ]
 }
 ```
 
+See the [`guide`](./guide/) for an example configuration,  
+and how to use the Elm library.
 
-## Elm
 
-[Website](https://elm-lang.org)
+### Step three, use the component library.
+
+#### React
+
+TODO.
+
+#### Elm
+
+```shell
+# TODO: Publish Elm package
+# elm install fission-kit
+```
 
 Use in an Elm application using either [elm-git-install](https://github.com/Skinney/elm-git-install) or a git submodule.
 
 ```elm
-import Kit
+import Kit.Components
 
-Kit.colors.purple
+Kit.Components.signIn [ class "bg-purple text-white text-opacity-90" ]
 ```
