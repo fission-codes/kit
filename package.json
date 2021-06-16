@@ -1,13 +1,22 @@
 {
   "name": "fission-kit",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A UI Kit for Fission Projects",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es5.js",
-  "browser": "dist/index.umd.js",
+  "main": "lib/Kit.js",
+  "module": "src/Kit.js",
+  "exports": {
+    ".": "./src/Kit.js",
+    "./*": "./src/*.js",
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "rollup -c",
+    "build": "\"$npm_execpath\" run build:lib && \"$npm_execpath\" run build:minified && \"$npm_execpath\" run build:elm-components",
+    "build:elm-components": "i18n-json-to-elm",
+    "build:lib": "esbuild src/Kit.js src/Components/React/index.js --bundle --outdir=lib --format=cjs",
+    "build:minified": "\"$npm_execpath\" run build:minified:kit && \"$npm_execpath\" run build:minified:react",
+    "build:minified:kit": "esbuild src/Kit.js --outfile=dist/index.min.js --bundle --minify --sourcemap --platform=browser --format=iife --global-name=globalThis.Kit --target=es2020 && gzip -k9 dist/index.min.js",
+    "build:minified:react": "esbuild src/Components/React/index.js --outfile=dist/components/react.min.js --bundle --minify --sourcemap --platform=browser --format=iife --global-name=globalThis.ReactKit --target=es2020 && gzip -k9 dist/components/react.min.js",
+    "prebuild": "rimraf dist && rimraf lib",
     "prepare": "\"$npm_execpath\" run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,9 +39,15 @@
   },
   "homepage": "https://github.com/fission-suite/kit#readme",
   "devDependencies": {
-    "@rollup/plugin-json": "^4.1.0",
+    "esbuild": "^0.12.9",
     "i18n-json-to-elm": "^1.2.2",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.35.1"
+    "react": "^17.0.2",
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1"
   }
 }

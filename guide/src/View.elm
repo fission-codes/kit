@@ -109,7 +109,7 @@ view _ =
       componentContainer
         []
         [ componentTitle "Colors"
-        , componentNotes [ Html.text "Base" ]
+        , componentNotes [ Html.text "Base:" ]
         , colorContainer
             [ colorBlock Kit.colors.base_25 "base_25" "w-1/3"
             , colorBlock Kit.colors.base_50 "base_50" "w-1/3"
@@ -126,7 +126,7 @@ view _ =
             ]
 
         --
-        , componentNotes [ Html.text "Shades" ]
+        , componentNotes [ Html.text "Shades:" ]
         , colorContainer
             [ colorBlock Kit.colors.purple "purple" "w-1/3"
             , colorBlock Kit.colors.purple_tint "purple_tint" "w-1/3"
@@ -140,7 +140,7 @@ view _ =
             ]
 
         --
-        , componentNotes [ Html.text "Other." ]
+        , componentNotes [ Html.text "Other:" ]
         , colorContainer
             [ colorBlock Kit.colors.yellow "yellow" "w-full"
 

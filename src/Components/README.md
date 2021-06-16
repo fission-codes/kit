@@ -1,10 +1,14 @@
 # How to use
 
+### Javascript
+
 ```js
-import classes from "fission-kit/Components.json"
+import classes from "../Classes.json"
 
 classes.buttons.base
 ```
+
+### Elm
 
 ```elm
 import Kit.Classes

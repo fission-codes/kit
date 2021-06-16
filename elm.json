@@ -3,7 +3,7 @@
     "name": "fission-suite/elm-kit",
     "summary": "UI Kit for Fission Elm projects ",
     "license": "Apache-2.0",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "exposed-modules": [
         "Kit"
     ],
