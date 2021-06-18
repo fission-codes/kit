@@ -29,7 +29,7 @@ export function ExtraSmallButton(props) {
 
 export function SignInButton(props) {
   return <button { ...props } className={clsx(classes.buttons.base, classes.buttons.signIn, props.className)}>
-    <span class="mr-2">
+    <span className="mr-2">
       <FissionLogo size={12} />
     </span>
     Sign in with Fission

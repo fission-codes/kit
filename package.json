@@ -5,8 +5,30 @@
   "main": "lib/Kit.js",
   "module": "src/Kit.js",
   "exports": {
-    ".": "./src/Kit.js",
-    "./*": "./src/*.js",
+    ".": {
+      "require": "./lib/Kit.js",
+      "import": "./src/Kit.js"
+    },
+    "./components/react": {
+      "require": "./lib/Components/React/index.js",
+      "import": "./src/Components/React/index.js"
+    },
+    "./components/react/*": {
+      "require": "./lib/Components/React/*",
+      "import": "./src/Components/React/*"
+    },
+    "./Components/React": {
+      "require": "./lib/Components/React/index.js",
+      "import": "./src/Components/React/index.js"
+    },
+    "./*.js": {
+      "require": "./lib/*.js",
+      "import": "./src/*.js"
+    },
+    "./*": {
+      "require": "./lib/*",
+      "import": "./src/*"
+    },
     "./package.json": "./package.json"
   },
   "scripts": {
