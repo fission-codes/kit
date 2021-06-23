@@ -1,10 +1,12 @@
 {
     "type": "package",
-    "name": "fission-suite/elm-kit",
-    "summary": "UI Kit for Fission Elm projects ",
+    "name": "fission-suite/fission-kit",
+    "summary": "Fission UI Kit",
     "license": "Apache-2.0",
     "version": "1.0.0",
     "exposed-modules": [
+        "Kit.Chunky",
+        "Kit.Components",
         "Kit"
     ],
     "elm-version": "0.19.0 <= v < 0.20.0",

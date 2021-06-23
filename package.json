@@ -1,7 +1,10 @@
 {
-  "name": "fission-kit",
+  "name": "@fission-suite/kit",
   "version": "1.0.0",
-  "description": "A UI Kit for Fission Projects",
+  "description": "Fission UI Kit",
+  "bin": {
+    "copy-fission-fonts": "./bin/copy-fonts.mjs"
+  },
   "main": "lib/Kit.js",
   "module": "src/Kit.js",
   "exports": {
@@ -70,6 +73,8 @@
     "react": "^17.0.2"
   },
   "dependencies": {
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "copyfiles": "^2.4.1",
+    "meow": "^10.0.1"
   }
 }

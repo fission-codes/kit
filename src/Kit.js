@@ -163,3 +163,16 @@ export function dasherizeObjectKeys(object) {
 
   return Object.fromEntries(transformedEntries)
 }
+
+
+/**
+ * To be used in the Tailwind `purge` config property.
+ */
+export function tailwindPurgeList(kitDir) {
+  kitDir = (kitDir || "./node_modules/@fission-suite/kit").replace(/\/+$/, "")
+
+  return [
+    kitDir + "/src/Components/Classes.json",
+    kitDir + "/src/Components/React/**/*.jsx"
+  ]
+}

@@ -9,17 +9,16 @@ __The Fission UI Kit__,
 _designed to be used with [Tailwind CSS](https://tailwindcss.com)._
 
 
+
 ## Getting Started
 
 ### Step one, install dependencies.
 
-* `npm install fission-kit`  
-  _TODO: publish on NPM._  
+* `npm install @fission-suite/kit`  
   _Use library as a Github dependency for now (ie. `fission-suite/kit`)._
 * `npm install tailwindcss`
 * Copy the font files.  
-  `cp -R node_modules/fission-kit/fonts/ ./vendor/fonts/`  
-  _TODO: Make a copy-fonts command._
+  `npx copy-fission-fonts ./vendor/fonts/`
 
 
 ### Step two, configure Tailwind CSS.
@@ -28,16 +27,23 @@ We need to configure Tailwind CSS to use the Fission colors and fonts.
 
 ```js
 import plugin from "tailwindcss/plugin"
-import * as kit from "fission-kit"
+import * as kit from "@fission-suite/kit"
 // or kit = require("fission-kit")
 
 export default {
+  purge: [
+    ...kit.tailwindPurgeList()
+  ],
+
   theme: {
     colors: kit.dasherizeObjectKeys(kit.colors),
     fontFamily: kit.fonts
   },
+
   plugins: [
     plugin(function({ addBase }) {
+      // this `fontsPath` will be the relative path
+      // to the fonts from the generated stylesheet
       kit.fontFaces({ fontsPath: "/fonts/" }).forEach(fontFace => {
         addBase({ "@font-face": fontFace })
       })
@@ -54,16 +60,24 @@ and how to use the Elm library.
 
 #### React
 
-TODO.
+```shell
+npm install @fission-suite/kit
+```
+
+```js
+import { SignInButton } from "@fission-suite/kit/components/react"
+
+<SignInButton
+  className="bg-base-900 text-base-50 dark:bg-base-100 dark:text-base-900"
+  onClick={() => webnative.redirectToLobby(PERMISSIONS)}
+/>
+```
 
 #### Elm
 
 ```shell
-# TODO: Publish Elm package
-# elm install fission-kit
+elm install fission-kit
 ```
-
-Use in an Elm application using either [elm-git-install](https://github.com/Skinney/elm-git-install) or a git submodule.
 
 ```elm
 import Kit.Components
