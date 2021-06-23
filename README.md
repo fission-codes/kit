@@ -8,7 +8,7 @@
 __The Fission UI Kit__,  
 _designed to be used with [Tailwind CSS](https://tailwindcss.com)._
 
-🎨 [Styleguide](https://kit.fission.app)
+🎨 [Styleguide](https://kit.fission.app)  
 📖 [Documentation](https://kit.fission.app/docs/)
 
 
