@@ -3,7 +3,7 @@ module Kit exposing
     , fonts
     )
 
-{-| Fission Kit.
+{-|
 
 
 # 🎨
@@ -24,6 +24,7 @@ import Color exposing (Color)
 -- 🎨
 
 
+{-| -}
 colors : { pink : Color, pink_tint : Color, pink_shade : Color, purple : Color, purple_tint : Color, purple_shade : Color, yellow : Color, base_25 : Color, base_50 : Color, base_100 : Color, base_200 : Color, base_300 : Color, base_400 : Color, base_500 : Color, base_600 : Color, base_700 : Color, base_800 : Color, base_900 : Color, base_950 : Color, marker_yellow : Color, marker_yellow_tint : Color, marker_yellow_shade : Color, black : Color, green : Color, red : Color, white : Color }
 colors =
     { pink = rgb 255 82 116
@@ -68,11 +69,13 @@ colors =
     }
 
 
+{-| -}
 primaryColor : Color
 primaryColor =
     colors.purple
 
 
+{-| -}
 secondaryColor : Color
 secondaryColor =
     colors.pink
@@ -107,9 +110,10 @@ rgb =
 
 
 
--- FONTS
+-- ✍
 
 
+{-| -}
 fonts : { body : String, display : String, mono : String }
 fonts =
     { body = "Karla"

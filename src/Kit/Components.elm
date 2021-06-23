@@ -3,7 +3,7 @@ module Kit.Components exposing
     , fissionIcon, signIn
     )
 
-{-| Fission Components.
+{-|
 
 
 # Generic
@@ -29,12 +29,14 @@ import Svg.Attributes as S
 -- GENERIC
 
 
+{-| -}
 type ButtonSize
     = ExtraSmall
     | Small
     | Normal
 
 
+{-| -}
 button : ButtonSize -> List (Html.Attribute msg) -> List (Html msg) -> Html msg
 button btnSize attributes nodes =
     chunk
@@ -58,6 +60,7 @@ button btnSize attributes nodes =
 -- SPECIFIC
 
 
+{-| -}
 fissionIcon : { size : Float } -> Svg msg
 fissionIcon { size } =
     Svg.svg
@@ -73,6 +76,7 @@ fissionIcon { size } =
         ]
 
 
+{-| -}
 signIn : List (Html.Attribute msg) -> Html msg
 signIn attributes =
     chunk
