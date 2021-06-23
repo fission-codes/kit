@@ -1,6 +1,9 @@
 // 🎨
 
 
+/**
+ * Colors dictionary.
+ */
 export const colors =
   { pink: rgb(255, 82, 116)
   , pink_tint: rgb(244, 220, 225)
@@ -52,11 +55,25 @@ export const secondaryColor =
     colors.pink
 
 
+/**
+ * hsl css color function.
+ * @param {number} h
+ * @param {number} s
+ * @param {number} l
+ * @returns {string}
+ */
 export function hsl(h, s, l) {
   return `hsl(${h}, ${s}%, ${l}%)`
 }
 
 
+/**
+ * rgb css color function.
+ * @param {number} r
+ * @param {number} g
+ * @param {number} b
+ * @returns {string}
+ */
 export function rgb(r, g, b) {
   return `rgb(${r}, ${g}, ${b})`
 }
@@ -66,6 +83,9 @@ export function rgb(r, g, b) {
 // FONTS
 
 
+/**
+ * Fonts dictionary.
+ */
 export const fonts =
     { body: "Karla"
     , display: "JetBrains Mono"
@@ -92,6 +112,10 @@ export const fonts =
  * and the `fontsPath` will be `fonts/`.
  *
  * That said, you can always use an absolute URL if you're unsure.
+ *
+ * @param {Object} options
+ * @param {string} options[].fontsPath - Relative path to font files.
+ * @returns {Object[]}
  */
 export function fontFaces({ fontsPath }) {
   const base = fontsPath.replace(/\/+$/, "")
@@ -152,7 +176,7 @@ export function fontFaces({ fontsPath }) {
 
 /**
  * Replaces all underscores with a dash in the keys of an object.
- * @param {Object.<string, *>}
+ * @param {Object.<string, *>} object
  * @returns {Object.<string, *>}
  */
 export function dasherizeObjectKeys(object) {
@@ -167,6 +191,7 @@ export function dasherizeObjectKeys(object) {
 
 /**
  * To be used in the Tailwind `purge` config property.
+ * @param {string} [kitDir=./node_modules/@fission-suite/kit] - Path to NPM module relative from your project's root directory.
  */
 export function tailwindPurgeList(kitDir) {
   kitDir = (kitDir || "./node_modules/@fission-suite/kit").replace(/\/+$/, "")

@@ -44,13 +44,38 @@ view _ =
         ]
 
     --
-    , chunk
+    , let
+        link =
+            chunk
+                Html.a
+                [ "underline" ]
+      in
+      chunk
         Html.p
         [ "italic"
+        , "leading-loose"
         , "mb-12"
         ]
         []
-        [ Html.text "Styleguide."
+        [ Html.text "Styleguide for the Fission UI kit."
+        , lineBreak
+        , link
+            [ A.target "_blank"
+            , A.href "docs/"
+            ]
+            [ Html.text "Javascript docs" ]
+        , lineBreak
+        , link
+            [ A.target "_blank"
+            , A.href "docs/react/"
+            ]
+            [ Html.text "React component docs" ]
+        , lineBreak
+        , link
+            [ A.target "_blank"
+            , A.href "https://package.elm-lang.org/packages/fission-suite/kit/latest/"
+            ]
+            [ Html.text "Elm docs" ]
         ]
 
     -----------------------------------------

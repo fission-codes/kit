@@ -74,7 +74,7 @@ import { SignInButton } from "@fission-suite/kit/components/react"
 #### Elm
 
 ```shell
-elm install fission-kit
+elm install fission-suite/kit
 ```
 
 ```elm

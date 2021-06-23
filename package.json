@@ -41,6 +41,7 @@
     "build:minified": "\"$npm_execpath\" run build:minified:kit && \"$npm_execpath\" run build:minified:react",
     "build:minified:kit": "esbuild src/Kit.js --outfile=dist/index.min.js --bundle --minify --sourcemap --platform=browser --format=iife --global-name=globalThis.Kit --target=es2020 && gzip -k9 dist/index.min.js",
     "build:minified:react": "esbuild src/Components/React/index.js --outfile=dist/components/react.min.js --bundle --minify --sourcemap --platform=browser --format=iife --global-name=globalThis.ReactKit --target=es2020 && gzip -k9 dist/components/react.min.js",
+    "docs": "documentation build src/Kit.js --output=docs --format=html --document-exported && documentation build src/Components/React/** --output=docs/react --format=html --document-exported",
     "prebuild": "rimraf dist && rimraf lib",
     "prepare": "\"$npm_execpath\" run build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -60,6 +61,7 @@
   "files": [
     "bin",
     "dist",
+    "docs",
     "fonts",
     "images",
     "lib",
@@ -74,6 +76,7 @@
   },
   "homepage": "https://github.com/fission-suite/kit#readme",
   "devDependencies": {
+    "documentation": "^13.2.5",
     "esbuild": "^0.12.9",
     "i18n-json-to-elm": "^1.2.2",
     "react": "^17.0.2",
