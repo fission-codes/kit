@@ -28,7 +28,7 @@ We need to configure Tailwind CSS to use the Fission colors and fonts.
 ```js
 import plugin from "tailwindcss/plugin"
 import * as kit from "@fission-suite/kit"
-// or kit = require("fission-kit")
+// or kit = require("@fission-suite/kit")
 
 export default {
   purge: [

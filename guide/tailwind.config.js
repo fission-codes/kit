@@ -1,5 +1,5 @@
 const plugin = require("tailwindcss/plugin")
-const kit = require("fission-kit")
+const kit = require("@fission-suite/kit")
 
 
 module.exports = {
@@ -28,7 +28,7 @@ module.exports = {
 
 
   plugins: [
-  
+
     // Add custom font
     plugin(function({ addBase }) {
       kit.fontFaces({ fontsPath: "/fonts/" }).forEach(fontFace => {

@@ -8,12 +8,12 @@ Alternatively, use the `fontFaces` function from `Kit.js` to generate font-face 
 
 ```shell
 # Files
-cp node_modules/fission-kit/fonts/**/*.woff2 build/fonts/
+npx copy-fission-fonts dist/fonts/
 
 # CSS
-@import "fission-kit/fonts/body/fontface.css";
-@import "fission-kit/fonts/display/fontface.css";
-@import "fission-kit/fonts/mono/fontface.css";
+@import "@fission-suite/kit/fonts/body/fontface.css";
+@import "@fission-suite/kit/fonts/display/fontface.css";
+@import "@fission-suite/kit/fonts/mono/fontface.css";
 
 # Example
 dist/stylesheet.css
