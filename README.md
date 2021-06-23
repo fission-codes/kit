@@ -8,6 +8,8 @@
 __The Fission UI Kit__,  
 _designed to be used with [Tailwind CSS](https://tailwindcss.com)._
 
+[Documentation](https://kit.fission.app/docs/)
+
 
 
 ## Getting Started
@@ -71,6 +73,8 @@ import { SignInButton } from "@fission-suite/kit/components/react"
 />
 ```
 
+[Documentation](https://kit.fission.app/docs/react/)
+
 #### Elm
 
 ```shell
@@ -82,3 +86,5 @@ import Kit.Components
 
 Kit.Components.signIn [ class "bg-purple text-white text-opacity-90" ]
 ```
+
+[Documentation](https://package.elm-lang.org/packages/fission-suite/kit/latest/)

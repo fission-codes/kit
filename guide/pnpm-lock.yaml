@@ -5,6 +5,7 @@ devDependencies:
   copyfiles: 2.4.1
   elm: 0.19.1-5
   postcss: 8.3.4
+  rimraf: 3.0.2
   tailwindcss: 2.1.4_505819627e86648d07c4e196a4237c15
 lockfileVersion: 5.2
 packages:
@@ -1190,6 +1191,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
+  /rimraf/3.0.2:
+    dependencies:
+      glob: 7.1.7
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   /run-parallel/1.2.0:
     dependencies:
       queue-microtask: 1.2.3
@@ -1521,4 +1529,5 @@ specifiers:
   copyfiles: ^2.4.1
   elm: ^0.19.1-5
   postcss: ^8.3.4
+  rimraf: ^3.0.2
   tailwindcss: ^2.1.4
