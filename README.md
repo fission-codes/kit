@@ -14,8 +14,7 @@ _designed to be used with [Tailwind CSS](https://tailwindcss.com)._
 
 ### Step one, install dependencies.
 
-* `npm install @fission-suite/kit`  
-  _Use library as a Github dependency for now (ie. `fission-suite/kit`)._
+* `npm install @fission-suite/kit`
 * `npm install tailwindcss`
 * Copy the font files.  
   `npx copy-fission-fonts ./vendor/fonts/ --woff2`
