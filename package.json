@@ -57,6 +57,16 @@
     "styles",
     "components"
   ],
+  "files": [
+    "bin",
+    "dist",
+    "fonts",
+    "images",
+    "lib",
+    "src/Components/**/*",
+    "src/Kit.js",
+    "src/package.json"
+  ],
   "author": "Steven Vandevelde <icid.asset@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {

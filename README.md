@@ -51,8 +51,7 @@ export default {
 }
 ```
 
-See the [`guide`](./guide/) for an example configuration,  
-and how to use the Elm library.
+See the [`guide`](./guide/) for an example configuration, and how to use the Elm library.
 
 
 ### Step three, use the component library.
