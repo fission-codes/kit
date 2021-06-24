@@ -1,6 +1,6 @@
 {
   "name": "@fission-suite/kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fission UI Kit",
   "bin": {
     "copy-fission-fonts": "./bin/copy-fonts.mjs"
@@ -10,29 +10,39 @@
   "exports": {
     ".": {
       "require": "./lib/Kit.js",
-      "import": "./src/Kit.js"
+      "import": "./src/Kit.js",
+      "default": "./src/Kit.js"
     },
     "./components/react": {
       "require": "./lib/Components/React/index.js",
-      "import": "./src/Components/React/index.js"
+      "import": "./src/Components/React/index.js",
+      "default": "./src/Components/React/index.js"
     },
     "./components/react/*": {
       "require": "./lib/Components/React/*",
-      "import": "./src/Components/React/*"
+      "import": "./src/Components/React/*",
+      "default": "./src/Components/React/*"
     },
     "./Components/React": {
       "require": "./lib/Components/React/index.js",
-      "import": "./src/Components/React/index.js"
+      "import": "./src/Components/React/index.js",
+      "default": "./src/Components/React/index.js"
+    },
+    "./Components/React/*": {
+      "require": "./lib/Components/React/*",
+      "import": "./src/Components/React/*",
+      "default": "./src/Components/React/*"
     },
     "./*.js": {
       "require": "./lib/*.js",
-      "import": "./src/*.js"
+      "import": "./src/*.js",
+      "default": "./src/*.js"
     },
     "./*": {
       "require": "./lib/*",
-      "import": "./src/*"
-    },
-    "./package.json": "./package.json"
+      "import": "./src/*",
+      "default": "./src/*"
+    }
   },
   "scripts": {
     "build": "\"$npm_execpath\" run build:lib && \"$npm_execpath\" run build:minified && \"$npm_execpath\" run build:elm-components",
