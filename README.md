@@ -21,6 +21,8 @@ _designed to be used with [Tailwind CSS](https://tailwindcss.com)._
 * `npm install tailwindcss`
 * Copy the font files.  
   `npx copy-fission-fonts ./vendor/fonts/ --woff2`
+* Copt the images.
+  `npx copy-fission-images ./vendor/images/`
 
 
 ### Step two, configure Tailwind CSS.
