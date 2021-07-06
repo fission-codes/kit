@@ -41,12 +41,17 @@ const fontsDir = path.resolve(kitDir, "../fonts/")
 const destDir = path.resolve(path.resolve(), cli.input[0])
 
 
+const execOpts = {
+  cwd: kitDir
+}
+
+
 if (cli.flags.ttf) {
-  execSync(`copyfiles --flat "${path.join(fontsDir, "**/*.ttf")}" "${destDir}"`)
+  execSync(`npx copyfiles --flat "${path.join(fontsDir, "**/*.ttf")}" "${destDir}"`, execOpts)
 }
 
 if (cli.flags.woff2) {
-  execSync(`copyfiles --flat "${path.join(fontsDir, "**/*.woff2")}" "${destDir}"`)
+  execSync(`npx copyfiles --flat "${path.join(fontsDir, "**/*.woff2")}" "${destDir}"`, execOpts)
 }
 
 if (!cli.flags.ttf && !cli.flags.woff2) {

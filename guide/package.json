@@ -12,9 +12,9 @@
     },
     "scripts": {
         "build": "pnpm run static; pnpm run elm-prod; pnpm run css-prod",
-        "fonts": "copyfiles --flat ../fonts/**/*.woff2 dist/fonts/",
+        "fonts": "copy-fission-fonts dist/fonts/ --woff2",
         "html": "copyfiles --flat src/**/*.html dist/",
-        "images": "copyfiles --flat ../images/**/*.* dist/images/",
+        "images": "copy-fission-images dist/images/",
         "jsdocs": "(cd ../; pnpm run docs) && copyfiles \"../docs/**/*\" dist/docs/",
         "prebuild": "rimraf dist",
         "static": "pnpm run fonts; pnpm run html; pnpm run images; pnpm run jsdocs;",
