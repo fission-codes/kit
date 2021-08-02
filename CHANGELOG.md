@@ -1,5 +1,10 @@
 # Changelog
 
+### 1.1.2
+
+Added missing `type: module` to `src/package.json`
+
+
 ### 1.1.1
 
 Added more badge-image variants.
