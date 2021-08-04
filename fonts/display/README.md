@@ -1,1 +1,1 @@
-Thanks to [https://github.com/weiweihuanghuang/Work-Sans](https://github.com/weiweihuanghuang/Work-Sans).
+Thanks to [https://www.jetbrains.com/lp/mono/](https://www.jetbrains.com/lp/mono/).
