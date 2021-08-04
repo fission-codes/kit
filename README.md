@@ -27,7 +27,7 @@ _designed to be used with [Tailwind CSS](https://tailwindcss.com)._
 
 ### Step two, configure Tailwind CSS.
 
-We need to configure Tailwind CSS to use the Fission colors and fonts.  
+We need to configure Tailwind CSS to use the Fission colors, fonts and other things.
 
 ```js
 import plugin from "tailwindcss/plugin"
@@ -41,7 +41,11 @@ export default {
 
   theme: {
     colors: kit.dasherizeObjectKeys(kit.colors),
-    fontFamily: kit.fonts
+    fontFamily: kit.fonts,
+
+    extend: {
+      fontSize: kit.fontSizes
+    }
   },
 
   plugins: [

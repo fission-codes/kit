@@ -87,10 +87,22 @@ export function rgb(r, g, b) {
  * Fonts dictionary.
  */
 export const fonts =
-    { body: "Karla"
-    , display: "JetBrains Mono"
-    , mono: "Fira Code"
-    }
+  { body: "Karla"
+  , display: "JetBrains Mono"
+  , mono: "Fira Code"
+  }
+
+
+/**
+ * Additional font sizes, on top of the default Tailwind set.
+ *
+ * Tiny = Between xs & sm (13px based on default 16px)
+ * Slight = Just below normal (ie. between sm & base, 15px based on default 16px)
+ */
+export const fontSizes =
+  { tiny: "0.8125rem"
+  , slight: "0.9375rem"
+  }
 
 
 /**

@@ -24,6 +24,10 @@ module.exports = {
 
     fontFamily: kit.fonts,
 
+    extend: {
+      fontSize: kit.fontSizes
+    }
+
   },
 
 

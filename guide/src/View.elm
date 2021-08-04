@@ -183,17 +183,21 @@ view _ =
     , component
         "Button"
         [ Kit.Components.button
+            Tag
+            [ A.class "bg-pink mr-2 text-white text-opacity-90" ]
+            [ Html.text "Save" ]
+        , Kit.Components.button
             ExtraSmall
-            [ A.class "bg-pink mr-2 text-xs text-white text-opacity-90" ]
-            [ Html.text "Button" ]
+            [ A.class "bg-pink mr-2 text-white text-opacity-90" ]
+            [ Html.text "Save" ]
         , Kit.Components.button
             Small
-            [ A.class "bg-pink mr-2 text-sm text-white text-opacity-90" ]
-            [ Html.text "Button" ]
+            [ A.class "bg-pink mr-2 text-white text-opacity-90" ]
+            [ Html.text "Save" ]
         , Kit.Components.button
             Normal
             [ A.class "bg-pink text-white text-opacity-90" ]
-            [ Html.text "Button" ]
+            [ Html.text "Save" ]
         ]
         [ Html.text "A good ol' button."
         , lineBreak

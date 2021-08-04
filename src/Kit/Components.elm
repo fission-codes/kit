@@ -34,6 +34,7 @@ type ButtonSize
     = ExtraSmall
     | Small
     | Normal
+    | Tag
 
 
 {-| -}
@@ -51,6 +52,9 @@ button btnSize attributes nodes =
 
             Normal ->
                 buttons.generic
+
+            Tag ->
+                buttons.genericTag
         ]
         attributes
         nodes
