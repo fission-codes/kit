@@ -14,7 +14,16 @@ buttons =
     }
 
 
+appNames : AppNames
+appNames =
+    { base = "font-medium font-display inline-flex items-center tracking-tighter"
+    , normal = "text-2xl"
+    , large = "text-3xl"
+    }
+
+
 root : Root
 root =
     { buttons = buttons
+    , appNames = appNames
     }

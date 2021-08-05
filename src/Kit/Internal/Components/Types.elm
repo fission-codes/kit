@@ -11,6 +11,14 @@ type alias Buttons =
     }
 
 
+type alias AppNames =
+    { base : String
+    , normal : String
+    , large : String
+    }
+
+
 type alias Root =
     { buttons : Buttons
+    , appNames : AppNames
     }

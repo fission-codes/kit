@@ -1,4 +1,30 @@
+import clsx from "clsx"
 import React from "react"
+
+import classes from "../Classes.json"
+
+
+// SPECIFIC
+
+
+export function AppName(props) {
+  return <h1 { ...props } className={clsx(classes.appNames.base, classes.appNames.normal, props.className)}>
+    <FissionLogo size={18} />
+    <span className="inline-block ml-2">
+      {props.children}
+    </span>
+  </h1>
+}
+
+
+export function LargeAppName(props) {
+  return <h1 { ...props } className={clsx(classes.appNames.base, classes.appNames.large, props.className)}>
+    <FissionLogo size={23} />
+    <span className="inline-block ml-2" style={{ paddingLeft: "2px" }}>
+      {props.children}
+    </span>
+  </h1>
+}
 
 
 /**

@@ -178,6 +178,25 @@ view _ =
         ]
 
     -----------------------------------------
+    -- App Name
+    -----------------------------------------
+    , component
+        "App Name"
+        [ Kit.Components.appName
+            { large = False }
+            [ A.class "mr-10" ]
+            "Dashboard"
+        , Kit.Components.appName
+            { large = True }
+            [ A.class "mr-10" ]
+            "Dashboard"
+        ]
+        [ Html.text ""
+        ]
+        """
+        """
+
+    -----------------------------------------
     -- Generic button
     -----------------------------------------
     , component

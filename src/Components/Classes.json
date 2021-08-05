@@ -6,5 +6,10 @@
 		"genericExtraSmall": "leading-relaxed px-2 py-1 rounded text-xs tracking-wider uppercase",
 		"genericTag": "leading-none px-1 py-1 rounded text-xs",
 		"signIn": "leading-relaxed px-5 py-2 rounded-full text-slight tracking-tight"
+	},
+	"appNames": {
+		"base": "font-medium font-display inline-flex items-center tracking-tighter",
+		"normal": "text-2xl",
+		"large": "text-3xl"
 	}
 }

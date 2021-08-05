@@ -1,6 +1,6 @@
 module Kit.Components exposing
     ( ButtonSize(..), button
-    , fissionIcon, signIn
+    , appName, fissionIcon, signIn
     )
 
 {-|
@@ -13,13 +13,14 @@ module Kit.Components exposing
 
 # Specific
 
-@docs fissionIcon, signIn
+@docs appName, fissionIcon, signIn
 
 -}
 
 import Html exposing (Html)
 import Html.Attributes as A
 import Kit.Chunky exposing (..)
+import Kit.Internal exposing (..)
 import Kit.Internal.Components.Classes as Classes exposing (..)
 import Svg exposing (Svg)
 import Svg.Attributes as S
@@ -62,6 +63,29 @@ button btnSize attributes nodes =
 
 
 -- SPECIFIC
+
+
+{-| -}
+appName : { large : Bool } -> List (Html.Attribute msg) -> String -> Html msg
+appName { large } attributes text =
+    chunk
+        Html.h1
+        [ appNames.base
+        , ifThenElse large appNames.large appNames.normal
+        ]
+        attributes
+        [ fissionIcon { size = ifThenElse large 23 18 }
+        , chunk
+            Html.span
+            [ "inline-block", "ml-2" ]
+            (if large then
+                [ A.style "padding-left" "2px" ]
+
+             else
+                []
+            )
+            [ Html.text text ]
+        ]
 
 
 {-| -}
