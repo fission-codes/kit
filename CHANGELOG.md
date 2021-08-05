@@ -1,5 +1,12 @@
 # Changelog
 
+
+### 2.0.0
+
+- Tweaked button components
+- Added `AppName` components
+
+
 ### 1.1.2
 
 Added missing `type: module` to `src/package.json`
