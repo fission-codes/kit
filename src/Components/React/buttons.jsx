@@ -23,6 +23,11 @@ export function ExtraSmallButton(props) {
 }
 
 
+export function TagButton(props) {
+  return <button { ...props } className={clsx(classes.buttons.base, classes.buttons.genericTag, props.className)}></button>
+}
+
+
 
 // SPECIFIC
 
