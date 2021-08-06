@@ -1,10 +1,15 @@
 # Changelog
 
+### 2.0.1
+
+Button tweaks.
+
 
 ### 2.0.0
 
 - Tweaked button components
 - Added `AppName` components
+
 
 
 ### 1.1.2
