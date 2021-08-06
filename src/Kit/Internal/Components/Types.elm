@@ -7,7 +7,6 @@ type alias Buttons =
     , genericSmall : String
     , genericExtraSmall : String
     , genericTag : String
-    , signIn : String
     }
 
 

@@ -109,7 +109,7 @@ signIn : List (Html.Attribute msg) -> Html msg
 signIn attributes =
     chunk
         Html.button
-        [ buttons.base, buttons.signIn ]
+        [ buttons.base, buttons.generic ]
         attributes
         [ chunk
             Html.span
