@@ -1,6 +1,109 @@
 // 🎨
 
 
+// ANIMATIONS
+
+
+const loadingAnimProps = "cubic-bezier(0.4, 0, 0.2, 1) infinite both"
+const loadingRotateTime = "4800ms"
+
+
+function loadingAnimation(lineNumber) {
+  return `loading-rotate ${loadingRotateTime} ${loadingAnimProps}, loading-line-${lineNumber} ${loadingRotateTime} ${loadingAnimProps}`
+}
+
+
+export const animations = {
+
+  // Loading animation
+  ////////////////////
+
+  "loading": "spin 1600ms linear infinite",
+  "loading-left-spin": `loading-left-spin 1200ms ${loadingAnimProps}`,
+  "loading-right-spin": `loading-right-spin 1200ms ${loadingAnimProps}`,
+  "loading-line-1": loadingAnimation(1),
+  "loading-line-2": loadingAnimation(2),
+  "loading-line-3": loadingAnimation(3),
+  "loading-line-4": loadingAnimation(4),
+
+  //
+  "loading-bugfix-placeholder-rotate": `loading-rotate ${loadingRotateTime} ${loadingAnimProps}`,
+  "loading-bugfix-placeholder-line-1": `loading-line-1 ${loadingRotateTime} ${loadingAnimProps}`,
+  "loading-bugfix-placeholder-line-2": `loading-line-2 ${loadingRotateTime} ${loadingAnimProps}`,
+  "loading-bugfix-placeholder-line-3": `loading-line-3 ${loadingRotateTime} ${loadingAnimProps}`,
+  "loading-bugfix-placeholder-line-4": `loading-line-4 ${loadingRotateTime} ${loadingAnimProps}`,
+
+}
+
+
+export const keyframes = {
+
+  // Loading animation
+  ////////////////////
+
+  "loading-rotate": {
+    "12.5%": { transform: "rotate(135deg)" },
+    "25%": { transform: "rotate(270deg)" },
+    "37.5%": { transform: "rotate(405deg)" },
+    "50%": { transform: "rotate(540deg)" },
+    "62.5%": { transform: "rotate(675deg)" },
+    "75%": { transform: "rotate(810deg)" },
+    "87.5%": { transform: "rotate(945deg)" },
+    "to": { transform: "rotate(1080deg)" },
+  },
+
+  "loading-left-spin": {
+    "0%": { transform: "rotate(130deg)" },
+    "50%": { transform: "rotate(-5deg)" },
+    "to": { transform: "rotate(130deg)" },
+  },
+
+  "loading-right-spin": {
+    "0%": { transform: "rotate(-130deg)" },
+    "50%": { transform: "rotate(5deg)" },
+    "to": { transform: "rotate(-130deg)" },
+  },
+
+  "loading-line-1": {
+    "0%": { opacity: "1" },
+    "25%": { opacity: "1" },
+    "26%": { opacity: "0" },
+    "89%": { opacity: "0" },
+    "90%": { opacity: "1" },
+    "to": { opacity: "1" },
+  },
+
+  "loading-line-2": {
+    "0%": { opacity: "0" },
+    "15%": { opacity: "0" },
+    "25%": { opacity: "1" },
+    "50%": { opacity: "1" },
+    "51%": { opacity: "0" },
+  },
+
+  "loading-line-3": {
+    "0%": { opacity: "0" },
+    "40%": { opacity: "0" },
+    "50%": { opacity: "1" },
+    "75%": { opacity: "1" },
+    "76%": { opacity: "0" },
+  },
+
+  "loading-line-4": {
+    "0%": { opacity: "0" },
+    "65%": { opacity: "0" },
+    "75%": { opacity: "1" },
+    "90%": { opacity: "1" },
+    "to": { opacity: "0" },
+  }
+
+}
+
+
+
+// COLORS
+
+
 /**
  * Colors dictionary.
  */

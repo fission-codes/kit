@@ -245,6 +245,21 @@ Kit.Components.button
 Kit.Components.signIn
     [ class "bg-purple text-white text-opacity-90" ]
         """
+
+    -----------------------------------------
+    -- Loading
+    -----------------------------------------
+    , component
+        "Loading animation"
+        [ Kit.Components.loadingAnimation
+            [ A.class "h-7 w-7" ]
+        ]
+        [ Html.text "Requires you to set the height and width."
+        ]
+        """
+Kit.Components.loadingAnimation
+    [ A.class "h-7 w-7" ]
+        """
     ]
         |> chunk Html.div
             [ "max-w-screen-md"

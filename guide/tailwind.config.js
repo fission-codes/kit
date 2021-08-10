@@ -7,9 +7,16 @@ module.exports = {
   darkMode: "media",
 
 
-  purge: [
-    "dist/**/*.js"
-  ],
+  purge: {
+    content: [ "dist/*.js" ],
+    safelist: [
+      "animate-loading-bugfix-placeholder-rotate",
+      "animate-loading-bugfix-placeholder-line-1",
+      "animate-loading-bugfix-placeholder-line-2",
+      "animate-loading-bugfix-placeholder-line-3",
+      "animate-loading-bugfix-placeholder-line-4",
+    ]
+  },
 
 
   theme: {
@@ -25,7 +32,9 @@ module.exports = {
     fontFamily: kit.fonts,
 
     extend: {
-      fontSize: kit.fontSizes
+      keyframes: kit.keyframes,
+      animation: kit.animations,
+      fontSize: kit.fontSizes,
     }
 
   },

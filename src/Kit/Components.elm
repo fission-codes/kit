@@ -1,6 +1,6 @@
 module Kit.Components exposing
     ( ButtonSize(..), button
-    , appName, fissionIcon, signIn
+    , appName, fissionIcon, loadingAnimation, signIn
     )
 
 {-|
@@ -13,12 +13,14 @@ module Kit.Components exposing
 
 # Specific
 
-@docs appName, fissionIcon, signIn
+@docs appName, fissionIcon, loadingAnimation, signIn
 
 -}
 
+import Color
 import Html exposing (Html)
 import Html.Attributes as A
+import Kit
 import Kit.Chunky exposing (..)
 import Kit.Internal exposing (..)
 import Kit.Internal.Components.Classes as Classes exposing (..)
@@ -59,6 +61,148 @@ button btnSize attributes nodes =
         ]
         attributes
         nodes
+
+
+
+-- SPECIFIC  /  LOADING
+
+
+{-| -}
+loadingAnimation attributes =
+    let
+        inner number =
+            chunk
+                Html.div
+                [ "absolute"
+                , "border-box"
+                , "border-2"
+                , "h-full"
+                , "inset-0"
+
+                --
+                , if number == 1 then
+                    "animate-loading-left-spin"
+
+                  else if number == 3 then
+                    "animate-loading-right-spin"
+
+                  else
+                    "animate-none"
+                ]
+                [ A.style "border-color" "inherit"
+                , A.style "border-bottom-color" "transparent"
+                , A.style "border-radius" "50%"
+
+                --
+                , if number == 2 then
+                    A.style "width" "1000%"
+
+                  else
+                    A.style "width" "200%"
+
+                --
+                , if number == 2 then
+                    A.style "left" "-450%"
+
+                  else if number == 3 then
+                    A.style "left" "-100%"
+
+                  else
+                    A.style "left" "0"
+
+                --
+                , if number == 1 then
+                    A.style "border-right-color" "transparent"
+
+                  else if number == 3 then
+                    A.style "border-left-color" "transparent"
+
+                  else
+                    A.style "" ""
+
+                --
+                , if number == 1 then
+                    A.style "transform" "rotate(129deg)"
+
+                  else if number == 3 then
+                    A.style "transform" "rotate(-129deg)"
+
+                  else
+                    A.style "" ""
+                ]
+                []
+
+        cog number =
+            chunk
+                Html.div
+                [ "h-full"
+                , "inline-block"
+                , "overflow-hidden"
+                , "relative"
+                , "w-1/2"
+                ]
+                [ A.style "border-color" "inherit" ]
+                [ inner number ]
+
+        ticker =
+            chunk
+                Html.div
+                [ "absolute"
+                , "box-border"
+                , "h-full"
+                , "overflow-hidden"
+                , "top-0"
+                ]
+                [ A.style "border-color" "inherit"
+                , A.style "left" "45%"
+                , A.style "width" "10%"
+                ]
+                [ inner 2
+                ]
+
+        line number color =
+            chunk
+                Html.div
+                [ "absolute"
+                , "flex"
+                , "h-full"
+                , "opacity-0"
+                , "w-full"
+
+                --
+                , case number of
+                    1 ->
+                        "animate-loading-line-1"
+
+                    2 ->
+                        "animate-loading-line-2"
+
+                    3 ->
+                        "animate-loading-line-3"
+
+                    4 ->
+                        "animate-loading-line-4"
+
+                    _ ->
+                        ""
+                ]
+                [ A.style "border-color" (Color.toCssString color) ]
+                [ cog 1
+                , ticker
+                , cog 3
+                ]
+    in
+    chunk
+        Html.div
+        [ "animate-loading"
+        , "relative"
+        ]
+        attributes
+        [ line 1 Kit.colors.purple
+        , line 2 Kit.colors.base_300
+        , line 3 Kit.colors.pink
+        , line 4 Kit.colors.base_300
+        ]
 
 
 
