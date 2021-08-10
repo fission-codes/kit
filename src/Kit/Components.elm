@@ -17,7 +17,6 @@ module Kit.Components exposing
 
 -}
 
-import Color
 import Html exposing (Html)
 import Html.Attributes as A
 import Kit
@@ -92,6 +91,7 @@ loadingAnimation attributes =
                 [ A.style "border-color" "inherit"
                 , A.style "border-bottom-color" "transparent"
                 , A.style "border-radius" "50%"
+                , A.style "border-type" "solid"
 
                 --
                 , if number == 2 then
@@ -160,14 +160,30 @@ loadingAnimation attributes =
                 [ inner 2
                 ]
 
-        line number color =
+        line number =
             chunk
                 Html.div
                 [ "absolute"
-                , "flex"
                 , "h-full"
                 , "opacity-0"
                 , "w-full"
+
+                --
+                , case number of
+                    1 ->
+                        "border-purple"
+
+                    2 ->
+                        "border-base-300 dark:border-base-600"
+
+                    3 ->
+                        "border-pink"
+
+                    4 ->
+                        "border-base-300 dark:border-base-600"
+
+                    _ ->
+                        ""
 
                 --
                 , case number of
@@ -186,7 +202,7 @@ loadingAnimation attributes =
                     _ ->
                         ""
                 ]
-                [ A.style "border-color" (Color.toCssString color) ]
+                []
                 [ cog 1
                 , ticker
                 , cog 3
@@ -197,11 +213,16 @@ loadingAnimation attributes =
         [ "animate-loading"
         , "relative"
         ]
-        attributes
-        [ line 1 Kit.colors.purple
-        , line 2 Kit.colors.base_300
-        , line 3 Kit.colors.pink
-        , line 4 Kit.colors.base_300
+        (List.append
+            [ A.style "font-size" "0"
+            , A.style "line-height" "0"
+            ]
+            attributes
+        )
+        [ line 1
+        , line 2
+        , line 3
+        , line 4
         ]
 
 
