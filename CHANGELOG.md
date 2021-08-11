@@ -1,5 +1,11 @@
 # Changelog
 
+
+### 2.1.0
+
+Added loading components.
+
+
 ### 2.0.1 & 2.0.2
 
 Button tweaks.
