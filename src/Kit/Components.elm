@@ -73,6 +73,7 @@ button btnSize attributes nodes =
 
 
 {-| -}
+loadingAnimation : List (Html.Attribute msg) -> Html msg
 loadingAnimation attributes =
     let
         inner number =
