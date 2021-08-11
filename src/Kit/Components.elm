@@ -1,6 +1,6 @@
 module Kit.Components exposing
     ( ButtonSize(..), button
-    , appName, fissionIcon, loadingAnimation, signIn
+    , appName, fissionIcon, loadingAnimation, loadingIndicator, loadingScreen, signIn
     )
 
 {-|
@@ -13,7 +13,7 @@ module Kit.Components exposing
 
 # Specific
 
-@docs appName, fissionIcon, loadingAnimation, signIn
+@docs appName, fissionIcon, loadingAnimation, loadingIndicator, loadingScreen, signIn
 
 -}
 
@@ -223,6 +223,52 @@ loadingAnimation attributes =
         , line 2
         , line 3
         , line 4
+        ]
+
+
+{-| -}
+loadingIndicator : String -> Html msg
+loadingIndicator loadingText =
+    chunk
+        Html.div
+        [ "flex"
+        , "flex-col"
+        , "items-center"
+        ]
+        []
+        [ loadingAnimation
+            [ A.class "h-7 w-7" ]
+        , chunk
+            Html.div
+            [ "italic"
+            , "mt-4"
+            , "opacity-60"
+            ]
+            []
+            [ Html.text loadingText ]
+        ]
+
+
+{-| -}
+loadingScreen : List (Html.Attribute msg) -> { logo : Html msg } -> Html msg
+loadingScreen attributes { logo } =
+    chunk
+        Html.div
+        [ "flex"
+        , "flex-col"
+        , "items-center"
+        , "justify-center"
+        ]
+        attributes
+        [ chunk
+            Html.div
+            [ "max-w-sm"
+            , "mb-10"
+            ]
+            []
+            [ logo ]
+        , loadingAnimation
+            [ A.class "h-7 w-7" ]
         ]
 
 

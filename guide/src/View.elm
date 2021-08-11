@@ -252,13 +252,46 @@ Kit.Components.signIn
     , component
         "Loading animation"
         [ Kit.Components.loadingAnimation
-            [ A.class "h-7 w-7" ]
+            [ A.class "h-5 w-5" ]
         ]
         [ Html.text "Requires you to set the height and width."
         ]
         """
 Kit.Components.loadingAnimation
-    [ A.class "h-7 w-7" ]
+    [ A.class "h-5 w-5" ]
+        """
+
+    --
+    , component
+        "Loading indicator"
+        [ Kit.Components.loadingIndicator
+            "Loading filesystem"
+        ]
+        []
+        """
+        """
+
+    --
+    , component
+        "Loading screen"
+        [ Kit.Components.loadingScreen
+            []
+            { logo =
+                chunk
+                    Html.div
+                    [ "max-w-sm" ]
+                    []
+                    [ Html.img
+                        [ A.src "https://ipfs.runfission.com/ipfs/bafkreiatamvoeakhkyfaptdqvo3yei73apoiw4r7y75sor63tqle7c5c5q"
+                        , A.width 1000
+                        ]
+                        []
+                    ]
+            }
+        ]
+        [ Html.text "Requires you to set the height."
+        ]
+        """
         """
     ]
         |> chunk Html.div
