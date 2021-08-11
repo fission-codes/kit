@@ -257,18 +257,16 @@ Kit.Components.signIn
         [ Html.text "Requires you to set the height and width."
         ]
         """
-Kit.Components.loadingAnimation
-    [ A.class "h-5 w-5" ]
+Kit.Components.loadingAnimation [ A.class "h-5 w-5" ]
         """
 
     --
     , component
         "Loading indicator"
-        [ Kit.Components.loadingIndicator
-            "Loading filesystem"
-        ]
+        [ Kit.Components.loadingIndicator "Loading filesystem" ]
         []
         """
+Kit.Components.loadingIndicator "Loading filesystem"
         """
 
     --
@@ -276,22 +274,24 @@ Kit.Components.loadingAnimation
         "Loading screen"
         [ Kit.Components.loadingScreen
             []
-            { logo =
-                chunk
-                    Html.div
-                    [ "max-w-sm" ]
-                    []
-                    [ Html.img
-                        [ A.src "https://ipfs.runfission.com/ipfs/bafkreiatamvoeakhkyfaptdqvo3yei73apoiw4r7y75sor63tqle7c5c5q"
-                        , A.width 1000
-                        ]
-                        []
-                    ]
-            }
+            [ Html.img
+                [ A.src "https://ipfs.runfission.com/ipfs/bafkreiatamvoeakhkyfaptdqvo3yei73apoiw4r7y75sor63tqle7c5c5q"
+                , A.width 1000
+                ]
+                []
+            ]
         ]
-        [ Html.text "Requires you to set the height."
+        [ Html.text "Requires you to set the height and some html."
         ]
         """
+Kit.Components.loadingScreen
+    []
+    [ Html.img
+        [ A.src "https://ipfs.runfission.com/ipfs/bafkreiatamvoeakhkyfaptdqvo3yei73apoiw4r7y75sor63tqle7c5c5q"
+        , A.width 1000
+        ]
+        []
+    ]
         """
     ]
         |> chunk Html.div

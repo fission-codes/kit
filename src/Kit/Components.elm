@@ -1,6 +1,7 @@
 module Kit.Components exposing
     ( ButtonSize(..), button
-    , appName, fissionIcon, loadingAnimation, loadingIndicator, loadingScreen, signIn
+    , loadingAnimation, loadingIndicator, loadingScreen
+    , appName, fissionIcon, signIn
     )
 
 {-|
@@ -11,9 +12,14 @@ module Kit.Components exposing
 @docs ButtonSize, button
 
 
-# Specific
+# Loading
 
-@docs appName, fissionIcon, loadingAnimation, loadingIndicator, loadingScreen, signIn
+@docs loadingAnimation, loadingIndicator, loadingScreen
+
+
+# Other
+
+@docs appName, fissionIcon, signIn
 
 -}
 
@@ -74,7 +80,7 @@ loadingAnimation attributes =
                 Html.div
                 [ "absolute"
                 , "border-box"
-                , "border-2"
+                , "border"
                 , "h-full"
                 , "inset-0"
 
@@ -174,13 +180,13 @@ loadingAnimation attributes =
                         "border-purple"
 
                     2 ->
-                        "border-base-300 dark:border-base-600"
+                        "border-purple-tint dark:border-purple-shade"
 
                     3 ->
-                        "border-pink"
+                        "border-base-300 dark:border-base-600"
 
                     4 ->
-                        "border-base-300 dark:border-base-600"
+                        "border-base-400 dark:border-base-500"
 
                     _ ->
                         ""
@@ -250,11 +256,15 @@ loadingIndicator loadingText =
 
 
 {-| -}
-loadingScreen : List (Html.Attribute msg) -> { logo : Html msg } -> Html msg
-loadingScreen attributes { logo } =
+loadingScreen : List (Html.Attribute msg) -> List (Html msg) -> Html msg
+loadingScreen attributes nodes =
     chunk
         Html.div
-        [ "flex"
+        [ "from-base-100"
+        , "to-base-300"
+
+        --
+        , "flex"
         , "flex-col"
         , "items-center"
         , "justify-center"
@@ -266,7 +276,7 @@ loadingScreen attributes { logo } =
             , "mb-10"
             ]
             []
-            [ logo ]
+            nodes
         , loadingAnimation
             [ A.class "h-7 w-7" ]
         ]
