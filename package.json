@@ -1,6 +1,6 @@
 {
   "name": "@fission-suite/kit",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Fission UI Kit",
   "bin": {
     "copy-fission-fonts": "./bin/copy-fonts.mjs",
