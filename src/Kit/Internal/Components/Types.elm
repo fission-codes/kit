@@ -17,7 +17,53 @@ type alias AppNames =
     }
 
 
+type alias LoadingAnimationLines =
+    { all : String
+    , one : String
+    , two : String
+    , three : String
+    , four : String
+    }
+
+
+type alias LoadingAnimationInner =
+    { all : String
+    , one : String
+    , two : String
+    , three : String
+    }
+
+
+type alias LoadingAnimation =
+    { container : String
+    , lines : LoadingAnimationLines
+    , ticker : String
+    , cog : String
+    , inner : LoadingAnimationInner
+    }
+
+
+type alias LoadingIndicator =
+    { container : String
+    , text : String
+    }
+
+
+type alias LoadingScreen =
+    { container : String
+    , nodes : String
+    }
+
+
+type alias Loading =
+    { animation : LoadingAnimation
+    , indicator : LoadingIndicator
+    , screen : LoadingScreen
+    }
+
+
 type alias Root =
     { buttons : Buttons
     , appNames : AppNames
+    , loading : Loading
     }

@@ -79,26 +79,22 @@ loadingAnimation attributes =
         inner number =
             chunk
                 Html.div
-                [ "absolute"
-                , "border-box"
-                , "border"
-                , "h-full"
-                , "inset-0"
+                [ loading.animation.inner.all
 
                 --
-                , if number == 1 then
-                    "animate-loading-left-spin"
+                , case number of
+                    1 ->
+                        loading.animation.inner.one
 
-                  else if number == 3 then
-                    "animate-loading-right-spin"
+                    2 ->
+                        loading.animation.inner.two
 
-                  else
-                    "animate-none"
+                    _ ->
+                        loading.animation.inner.three
                 ]
                 [ A.style "border-color" "inherit"
                 , A.style "border-bottom-color" "transparent"
                 , A.style "border-radius" "50%"
-                , A.style "border-type" "solid"
 
                 --
                 , if number == 2 then
@@ -142,69 +138,38 @@ loadingAnimation attributes =
         cog number =
             chunk
                 Html.div
-                [ "h-full"
-                , "inline-block"
-                , "overflow-hidden"
-                , "relative"
-                , "w-1/2"
-                ]
+                [ loading.animation.cog ]
                 [ A.style "border-color" "inherit" ]
                 [ inner number ]
 
         ticker =
             chunk
                 Html.div
-                [ "absolute"
-                , "box-border"
-                , "h-full"
-                , "overflow-hidden"
-                , "top-0"
-                ]
+                [ loading.animation.ticker ]
                 [ A.style "border-color" "inherit"
                 , A.style "left" "45%"
                 , A.style "width" "10%"
                 ]
-                [ inner 2
-                ]
+                [ inner 2 ]
 
         line number =
             chunk
                 Html.div
-                [ "absolute"
-                , "h-full"
-                , "opacity-0"
-                , "w-full"
+                [ loading.animation.lines.all
 
                 --
                 , case number of
                     1 ->
-                        "border-purple"
+                        loading.animation.lines.one
 
                     2 ->
-                        "border-purple-tint dark:border-purple-shade"
+                        loading.animation.lines.two
 
                     3 ->
-                        "border-base-300 dark:border-base-600"
+                        loading.animation.lines.three
 
                     4 ->
-                        "border-base-400 dark:border-base-500"
-
-                    _ ->
-                        ""
-
-                --
-                , case number of
-                    1 ->
-                        "animate-loading-line-1"
-
-                    2 ->
-                        "animate-loading-line-2"
-
-                    3 ->
-                        "animate-loading-line-3"
-
-                    4 ->
-                        "animate-loading-line-4"
+                        loading.animation.lines.four
 
                     _ ->
                         ""
@@ -217,9 +182,7 @@ loadingAnimation attributes =
     in
     chunk
         Html.div
-        [ "animate-loading"
-        , "relative"
-        ]
+        [ loading.animation.container ]
         (List.append
             [ A.style "font-size" "0"
             , A.style "line-height" "0"
@@ -238,19 +201,13 @@ loadingIndicator : String -> Html msg
 loadingIndicator loadingText =
     chunk
         Html.div
-        [ "flex"
-        , "flex-col"
-        , "items-center"
-        ]
+        [ loading.indicator.container ]
         []
         [ loadingAnimation
             [ A.class "h-7 w-7" ]
         , chunk
             Html.div
-            [ "italic"
-            , "mt-4"
-            , "opacity-60"
-            ]
+            [ loading.indicator.text ]
             []
             [ Html.text loadingText ]
         ]
@@ -261,21 +218,11 @@ loadingScreen : List (Html.Attribute msg) -> List (Html msg) -> Html msg
 loadingScreen attributes nodes =
     chunk
         Html.div
-        [ "from-base-100"
-        , "to-base-300"
-
-        --
-        , "flex"
-        , "flex-col"
-        , "items-center"
-        , "justify-center"
-        ]
+        [ loading.screen.container ]
         attributes
         [ chunk
             Html.div
-            [ "max-w-sm"
-            , "mb-10"
-            ]
+            [ loading.screen.nodes ]
             []
             nodes
         , loadingAnimation
