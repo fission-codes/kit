@@ -191,9 +191,13 @@ view _ =
             [ A.class "mr-10" ]
             "Dashboard"
         ]
-        [ Html.text ""
+        [ Html.text "App name/title for your Fission app."
         ]
         """
+Kit.Components.appName
+    { large = False }
+    [ A.class "mr-10" ]
+    "Dashboard"
         """
 
     -----------------------------------------
@@ -264,7 +268,10 @@ Kit.Components.loadingAnimation [ A.class "h-5 w-5" ]
     , component
         "Loading indicator"
         [ Kit.Components.loadingIndicator "Loading filesystem" ]
-        []
+        [ Html.text "Indicate what is loading."
+        , lineBreak
+        , Html.text "Has a fixed loading-animation size."
+        ]
         """
 Kit.Components.loadingIndicator "Loading filesystem"
         """
@@ -281,7 +288,9 @@ Kit.Components.loadingIndicator "Loading filesystem"
                 []
             ]
         ]
-        [ Html.text "Requires you to set the height and some html."
+        [ Html.text "Similar to the loading indicator, but focuses on the branding/product instead."
+        , lineBreak
+        , Html.text "Requires you to set the height and some html."
         ]
         """
 Kit.Components.loadingScreen
