@@ -9,22 +9,31 @@ import { FissionLogo } from "./misc.jsx"
 
 
 export function Button(props) {
-  return <button { ...props } className={clsx(classes.buttons.base, classes.buttons.generic, props.className)}></button>
+  return renderButton(classes.buttons.generic, props)
 }
 
 
 export function SmallButton(props) {
-  return <button { ...props } className={clsx(classes.buttons.base, classes.buttons.genericSmall, props.className)}></button>
+  return renderButton(classes.buttons.genericSmall, props)
 }
 
 
 export function ExtraSmallButton(props) {
-  return <button { ...props } className={clsx(classes.buttons.base, classes.buttons.genericExtraSmall, props.className)}></button>
+  return renderButton(classes.buttons.genericExtraSmall, props)
 }
 
 
 export function TagButton(props) {
-  return <button { ...props } className={clsx(classes.buttons.base, classes.buttons.genericTag, props.className)}></button>
+  return renderButton(classes.buttons.genericTag, props)
+}
+
+
+function renderButton(sizeClassName, props) {
+  return React.createElement(
+    props.tagName || "button",
+    { ...props, className: clsx(classes.buttons.base, sizeClassName, props.className) },
+    props.children
+  )
 }
 
 
@@ -33,10 +42,10 @@ export function TagButton(props) {
 
 
 export function SignInButton(props) {
-  return <button { ...props } className={clsx(classes.buttons.base, classes.buttons.generic, props.className)}>
+  return <Button>
     <span className="mr-2">
       <FissionLogo size={12} />
     </span>
     Sign in with Fission
-  </button>
+  </Button>
 }

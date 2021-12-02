@@ -1,5 +1,5 @@
 module Kit.Components exposing
-    ( ButtonSize(..), button
+    ( ButtonSize(..), button, buttonLink, buttonWithElement
     , loadingAnimation, loadingIndicator, loadingScreen
     , appName, fissionIcon, signIn
     )
@@ -9,7 +9,7 @@ module Kit.Components exposing
 
 # Generic
 
-@docs ButtonSize, button
+@docs ButtonSize, button, buttonLink, buttonWithElement
 
 
 # Loading
@@ -47,9 +47,21 @@ type ButtonSize
 
 {-| -}
 button : ButtonSize -> List (Html.Attribute msg) -> List (Html msg) -> Html msg
-button btnSize attributes nodes =
+button =
+    buttonWithElement Html.button
+
+
+{-| -}
+buttonLink : ButtonSize -> List (Html.Attribute msg) -> List (Html msg) -> Html msg
+buttonLink =
+    buttonWithElement Html.a
+
+
+{-| -}
+buttonWithElement : (List (Html.Attribute msg) -> List (Html msg) -> Html msg) -> ButtonSize -> List (Html.Attribute msg) -> List (Html msg) -> Html msg
+buttonWithElement element btnSize attributes nodes =
     chunk
-        Html.button
+        element
         [ buttons.base
         , case btnSize of
             ExtraSmall ->

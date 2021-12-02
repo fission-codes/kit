@@ -1,6 +1,11 @@
 # Changelog
 
 
+### 2.2.0
+
+Allow buttons with different tag names.
+
+
 ### 2.1.0
 
 Added loading components.
