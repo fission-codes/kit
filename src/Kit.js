@@ -108,7 +108,8 @@ export const keyframes = {
  * Colors dictionary.
  */
 export const colors =
-  { pink: rgb(255, 82, 116)
+{
+  pink: rgb(255, 82, 116)
   , pink_tint: rgb(244, 220, 225)
   , pink_shade: rgb(145, 81, 94)
 
@@ -147,15 +148,15 @@ export const colors =
   , green: rgb(61, 191, 83)
   , red: rgb(191, 61, 87)
   , white: rgb(255, 255, 255)
-  }
+}
 
 
 export const primaryColor =
-    colors.purple
+  colors.purple
 
 
 export const secondaryColor =
-    colors.pink
+  colors.pink
 
 
 /**
@@ -190,10 +191,11 @@ export function rgb(r, g, b) {
  * Fonts dictionary.
  */
 export const fonts =
-  { body: "Karla"
+{
+  body: "Karla"
   , display: "JetBrains Mono"
   , mono: "Fira Code"
-  }
+}
 
 
 /**
@@ -203,9 +205,10 @@ export const fonts =
  * Slight = Just below normal (ie. between sm & base, 15px based on default 16px)
  */
 export const fontSizes =
-  { tiny: "0.8125rem"
+{
+  tiny: "0.8125rem"
   , slight: "0.9375rem"
-  }
+}
 
 
 /**
@@ -297,7 +300,7 @@ export function fontFaces({ fontsPath }) {
 export function dasherizeObjectKeys(object) {
   const entries = Object.entries(object)
   const transformedEntries = entries.map(
-    ([k, v]) => [ k.replace(/_/g, "-"), v ]
+    ([ k, v ]) => [ k.replace(/_/g, "-"), v ]
   )
 
   return Object.fromEntries(transformedEntries)
@@ -306,10 +309,10 @@ export function dasherizeObjectKeys(object) {
 
 /**
  * To be used in the Tailwind `purge` config property.
- * @param {string} [kitDir=./node_modules/@fission-suite/kit] - Path to NPM module relative from your project's root directory.
+ * @param {string} [kitDir=./node_modules/@fission-codes/kit] - Path to NPM module relative from your project's root directory.
  */
 export function tailwindPurgeList(kitDir) {
-  kitDir = (kitDir || "./node_modules/@fission-suite/kit").replace(/\/+$/, "")
+  kitDir = (kitDir || "./node_modules/@fission-codes/kit").replace(/\/+$/, "")
 
   return [
     kitDir + "/src/Components/Classes.json",

@@ -73,7 +73,7 @@ view _ =
         , lineBreak
         , link
             [ A.target "_blank"
-            , A.href "https://package.elm-lang.org/packages/fission-suite/kit/latest/"
+            , A.href "https://package.elm-lang.org/packages/fission-codes/kit/latest/"
             ]
             [ Html.text "Elm docs" ]
         ]

@@ -11,9 +11,9 @@ Alternatively, use the `fontFaces` function from `Kit.js` to generate font-face 
 npx copy-fission-fonts dist/fonts/
 
 # CSS
-@import "@fission-suite/kit/fonts/body/fontface.css";
-@import "@fission-suite/kit/fonts/display/fontface.css";
-@import "@fission-suite/kit/fonts/mono/fontface.css";
+@import "@fission-codes/kit/fonts/body/fontface.css";
+@import "@fission-codes/kit/fonts/display/fontface.css";
+@import "@fission-codes/kit/fonts/mono/fontface.css";
 
 # Example
 dist/stylesheet.css

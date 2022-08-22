@@ -1,9 +1,9 @@
 {
     "type": "package",
-    "name": "fission-suite/kit",
+    "name": "fission-codes/kit",
     "summary": "Fission UI Kit",
     "license": "Apache-2.0",
-    "version": "2.2.0",
+    "version": "1.0.0",
     "exposed-modules": [
         "Kit.Chunky",
         "Kit.Components",
